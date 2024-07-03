@@ -4,7 +4,7 @@
    Executable = F:/ARMChina/bin/td.exe
    Built at =   20:34:38 Mar 21 2023
    Run by =     Illyasvial Von Einzb
-   Run Date =   Wed Jul  3 21:16:27 2024
+   Run Date =   Wed Jul  3 21:10:10 2024
 
    Run on =     LAPTOP-4S5LNBPI
 ============================================================
@@ -269,7 +269,7 @@ HDL-1007 : elaborate module isp_dpc(BITS=16,WIDTH=1920,HEIGHT=1080,BAYER=2) in .
 HDL-1007 : elaborate module shift_register(BITS=16,WIDTH=1920,LINES=4) in ../../import/hdmi_top/ISP_include.v(91)
 HDL-1007 : elaborate module simple_dp_ram(DW=16,AW=11,SZ=1919) in ../../import/hdmi_top/ISP_include.v(15)
 HDL-1007 : extracting RAM for identifier 'mem' in ../../import/hdmi_top/ISP_include.v(30)
-HDL-5007 WARNING: actual bit length 32 differs from formal bit length 16 for port 'threshold' in ../../import/hdmi_top/hdmi_top.v(94)
+HDL-5007 WARNING: actual bit length 8 differs from formal bit length 16 for port 'threshold' in ../../import/hdmi_top/hdmi_top.v(94)
 HDL-5007 WARNING: actual bit length 24 differs from formal bit length 16 for port 'in_raw' in ../../import/hdmi_top/hdmi_top.v(98)
 HDL-1007 : switch to vhdl to elaborate module hdmi_tx in ../../import/hdmi_top/hdmi_top.v(106)
 HDL-1007 : elaborate hdmi_tx(1,3)(Behavioral) in ../../import/hdmi-rtl/hdmi_tx.vhd(11)
@@ -411,8 +411,8 @@ SYN-1043 : Mark ddr3_top1 as IO macro for instance u_sdram_controller
 SYN-1043 : Mark PLL_hdmi as IO macro for instance bufg_feedback
 SYN-1043 : Mark PLL as IO macro for instance bufg_feedback
 SYN-1011 : Flatten model sd_bmp_hdmi
-SYN-1032 : 8531/2264 useful/useless nets, 2088/187 useful/useless insts
-SYN-1016 : Merged 688 instances.
+SYN-1032 : 8532/2264 useful/useless nets, 2089/187 useful/useless insts
+SYN-1016 : Merged 689 instances.
 SYN-1025 : Merged 15 RAM ports.
 SYN-1026 : Infer Logic BRAM(u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/ram_inst/ramread0_syn_6)
 	 port mode: single dual port
@@ -439,12 +439,12 @@ SYN-1026 : Infer Logic BRAM(u_hdmi_top/dpc/linebuffer/gen_ram_inst[3]$u_ram/ramr
 	 port a size: 2048 x 16	 write mode: NORMAL
 	 port b size: 2048 x 16	 write mode: READBEFOREWRITE
 SYN-1023 : Infer 0 Logic DRAMs, 6 Logic BRAMs.
-SYN-1032 : 6991/1419 useful/useless nets, 1432/144 useful/useless insts
+SYN-1032 : 7015/1395 useful/useless nets, 1432/144 useful/useless insts
 SYN-1016 : Merged 530 instances.
 SYN-5025 WARNING: Using 0 for all undriven pins and nets
-SYN-1032 : 6339/103 useful/useless nets, 5417/268 useful/useless insts
+SYN-1032 : 6345/103 useful/useless nets, 5423/262 useful/useless insts
 SYN-1014 : Optimize round 1
-SYN-1032 : 6320/19 useful/useless nets, 5417/0 useful/useless insts
+SYN-1032 : 6326/19 useful/useless nets, 5423/0 useful/useless insts
 SYN-1017 : Remove 10 const input seq instances
 SYN-1002 :     u_ddr3_top/u_sdram_controller/u_sdram_ctrl/reg2_syn_12
 SYN-1002 :     u_ddr3_top/u_sdram_fifo_ctrl/wr_load_r1_reg
@@ -456,16 +456,16 @@ SYN-1002 :     u_sd_ctrl_top/u_sd_write/wr_en_d0_reg
 SYN-1002 :     u_ddr3_top/u_sdram_fifo_ctrl/wr_load_r2_reg
 SYN-1002 :     u_hdmi_top/u3_hdmi_tx/Inst_DVITransmitter/Inst_TMDSEncoder_green/c0_dd_reg
 SYN-1002 :     u_sd_ctrl_top/u_sd_write/wr_en_d1_reg
-SYN-1019 : Optimized 6 mux instances.
+SYN-1019 : Optimized 12 mux instances.
 SYN-1021 : Optimized 82 onehot mux instances.
-SYN-1020 : Optimized 318 distributor mux.
-SYN-1001 : Optimize 18 less-than instances
+SYN-1020 : Optimized 324 distributor mux.
+SYN-1001 : Optimize 26 less-than instances
 SYN-1019 : Optimized 41 mux instances.
-SYN-1016 : Merged 539 instances.
-SYN-1015 : Optimize round 1, 3417 better
+SYN-1016 : Merged 563 instances.
+SYN-1015 : Optimize round 1, 3461 better
 SYN-1014 : Optimize round 2
 SYN-1044 : Optimized 7 inv instances.
-SYN-1032 : 5545/56 useful/useless nets, 4645/409 useful/useless insts
+SYN-1032 : 5369/168 useful/useless nets, 4525/529 useful/useless insts
 SYN-1017 : Remove 11 const input seq instances
 SYN-1002 :     u_ddr3_top/u_sdram_fifo_ctrl/reg0_syn_2
 SYN-1002 :     u_ddr3_top/u_sdram_fifo_ctrl/reg1_syn_2
@@ -480,8 +480,8 @@ SYN-1002 :     u_sd_ctrl_top/u_sd_write/reg8_syn_10
 SYN-1002 :     u_sd_ctrl_top/u_sd_write/wr_busy_reg
 SYN-1019 : Optimized 32 mux instances.
 SYN-1016 : Merged 30 instances.
-SYN-1015 : Optimize round 2, 667 better
-SYN-1032 : 5289/155 useful/useless nets, 4423/126 useful/useless insts
+SYN-1015 : Optimize round 2, 899 better
+SYN-1032 : 5113/155 useful/useless nets, 4303/126 useful/useless insts
 SYN-3003 : Optimized 1 equivalent DFF(s)
 SYN-3004 : Optimized 2 const0 DFF(s)
 SYN-3003 : Optimized 1 equivalent DFF(s)
@@ -493,22 +493,22 @@ SYN-3003 : Optimized 1 equivalent DFF(s)
 SYN-3003 : Optimized 1 equivalent DFF(s)
 SYN-3004 : Optimized 7 const0 DFF(s)
 SYN-3008 : Optimized 1 const1 DFF(s)
-SYN-1032 : 5247/42 useful/useless nets, 4395/9 useful/useless insts
+SYN-1032 : 5071/42 useful/useless nets, 4275/9 useful/useless insts
 SYN-1014 : Optimize round 1
 SYN-1044 : Optimized 1 inv instances.
-SYN-1032 : 5240/1 useful/useless nets, 4388/0 useful/useless insts
+SYN-1032 : 5064/1 useful/useless nets, 4268/0 useful/useless insts
 SYN-1019 : Optimized 5 mux instances.
 SYN-1001 : Optimize 1 less-than instances
 SYN-1016 : Merged 2 instances.
 SYN-1015 : Optimize round 1, 33 better
 SYN-1014 : Optimize round 2
-SYN-1032 : 5215/10 useful/useless nets, 4374/4 useful/useless insts
+SYN-1032 : 5039/10 useful/useless nets, 4254/4 useful/useless insts
 SYN-1015 : Optimize round 2, 8 better
 SYN-1014 : Optimize round 3
 SYN-1015 : Optimize round 3, 0 better
-RUN-1003 : finish command "optimize_rtl" in  3.783934s wall, 2.609375s user + 0.484375s system = 3.093750s CPU (81.8%)
+RUN-1003 : finish command "optimize_rtl" in  3.455372s wall, 2.421875s user + 0.453125s system = 2.875000s CPU (83.2%)
 
-RUN-1004 : used memory is 151 MB, reserved memory is 116 MB, peak memory is 165 MB
+RUN-1004 : used memory is 151 MB, reserved memory is 117 MB, peak memory is 165 MB
 RUN-1002 : start command "report_area -file SD-SDRAM-ISP-HDMI_rtl.area"
 RUN-1001 : standard
 ***Report Model: sd_bmp_hdmi Device: EG4S20BG256***
@@ -520,7 +520,7 @@ IO Statistics
   #inout                    0
 
 Gate Statistics
-#Basic gates             2506
+#Basic gates             2454
   #and                    133
   #nand                     0
   #or                      48
@@ -530,20 +530,20 @@ Gate Statistics
   #buf                      0
   #not                     94
   #bufif1                  16
-  #MX21                   136
+  #MX21                   148
   #FADD                     0
-  #DFF                   1990
+  #DFF                   1926
   #LATCH                    0
 #MACRO_ADD                179
 #MACRO_EQ                  72
-#MACRO_MUX               1440
+#MACRO_MUX               1372
 #MACRO_OTHERS              12
 
 Report Hierarchy Area:
 +-------------------------------------------------------------------------------------------------------+
 |Instance                           |Module                                     |gates  |seq    |macros |
 +-------------------------------------------------------------------------------------------------------+
-|top                                |sd_bmp_hdmi                                |516    |1990   |263    |
+|top                                |sd_bmp_hdmi                                |528    |1926   |263    |
 |  u_clk_wiz_0                      |PLL                                        |0      |0      |1      |
 |  u_clk_wiz_1                      |PLL_hdmi                                   |0      |0      |1      |
 |  u_ddr3_top                       |ddr3_top1                                  |172    |377    |54     |
@@ -561,8 +561,8 @@ Report Hierarchy Area:
 |        ram_inst                   |ram_infer_SOFTFIFO                         |0      |16     |1      |
 |        rd_to_wr_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
 |        wr_to_rd_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
-|  u_hdmi_top                       |hdmi_top1                                  |104    |1252   |146    |
-|    dpc                            |isp_dpc                                    |16     |1089   |64     |
+|  u_hdmi_top                       |hdmi_top1                                  |104    |1188   |146    |
+|    dpc                            |isp_dpc                                    |16     |1025   |64     |
 |      linebuffer                   |shift_register                             |0      |27     |7      |
 |        gen_ram_inst[0]$u_ram      |simple_dp_ram                              |0      |0      |1      |
 |        gen_ram_inst[1]$u_ram      |simple_dp_ram                              |0      |0      |1      |
@@ -581,7 +581,7 @@ Report Hierarchy Area:
 |  u_sd_ctrl_top                    |sd_ctrl_top                                |155    |217    |37     |
 |    u_sd_init                      |sd_init                                    |105    |111    |23     |
 |    u_sd_read                      |sd_read                                    |43     |106    |14     |
-|  u_sd_read_photo                  |read_rawdata                               |81     |144    |24     |
+|  u_sd_read_photo                  |read_rawdata                               |93     |144    |24     |
 +-------------------------------------------------------------------------------------------------------+
 
 RUN-1002 : start command "export_db SD-SDRAM-ISP-HDMI_rtl.db"
@@ -605,7 +605,7 @@ RUN-1002 : start command "get_nets  clkw  "
 RUN-1002 : start command "get_clocks -nowarn -of nets 9663676416000"
 RUN-1002 : start command "get_ports clkr"
 RUN-1002 : start command "get_nets  clkr  "
-RUN-1002 : start command "get_clocks -nowarn -of nets 36777804955648"
+RUN-1002 : start command "get_clocks -nowarn -of nets 36786394890240"
 RUN-1002 : start command "get_property -nowarn -max PERIOD "
 RUN-1002 : start command "get_property -nowarn -max PERIOD "
 RUN-1002 : start command "get_regs rd_to_wr_cross_inst/primary_addr_gray_reg[*]"
@@ -677,7 +677,7 @@ RUN-1001 :           retiming          |    off     |       off        |
 RUN-1001 : ------------------------------------------------------------------
 SYN-2002 : EG_PHY_SDRAM_2M_32 instance u_ddr3_top/physica_sdram/sdram.
 SYN-2001 : Map 67 IOs to PADs
-SYN-1032 : 5186/41 useful/useless nets, 4403/41 useful/useless insts
+SYN-1032 : 5010/41 useful/useless nets, 4283/41 useful/useless insts
 RUN-1002 : start command "update_pll_param -module sd_bmp_hdmi"
 SYN-2501 : Processed 0 LOGIC_BUF instances.
 SYN-2501 : 2 BUFG to GCLK
@@ -701,7 +701,7 @@ SYN-2571 : Optimize after map_dsp, round 2, 0 better
 SYN-1001 : Throwback 39 control mux instances
 SYN-1001 : Optimize 2 less-than instances
 SYN-2501 : Optimize round 1
-SYN-1032 : 5720/2 useful/useless nets, 5005/2 useful/useless insts
+SYN-1032 : 5544/2 useful/useless nets, 4885/2 useful/useless insts
 SYN-1016 : Merged 114 instances.
 SYN-2501 : Optimize round 1, 588 better
 SYN-2501 : Optimize round 2
@@ -714,16 +714,16 @@ SYN-3001 : Mapper mapped 31 instances into 2 LUTs, name keeping = 50%.
 SYN-3001 : Mapper mapped 63 instances into 2 LUTs, name keeping = 50%.
 SYN-3001 : Mapper mapped 63 instances into 3 LUTs, name keeping = 100%.
 SYN-2501 : Inferred 3 ROM instances
-SYN-1019 : Optimized 181 mux instances.
-SYN-1016 : Merged 243 instances.
-SYN-1032 : 7686/36 useful/useless nets, 6972/2 useful/useless insts
+SYN-1019 : Optimized 192 mux instances.
+SYN-1016 : Merged 235 instances.
+SYN-1032 : 7419/92 useful/useless nets, 6761/2 useful/useless insts
 RUN-1002 : start command "start_timer -prepack"
 TMR-2505 : Start building timing graph for model sd_bmp_hdmi.
-TMR-2506 : Build timing graph completely. Port num: 9, tpin num: 25490, tnet num: 7686, tinst num: 6971, tnode num: 30158, tedge num: 35585.
+TMR-2506 : Build timing graph completely. Port num: 9, tpin num: 24662, tnet num: 7419, tinst num: 6760, tnode num: 29202, tedge num: 34415.
 TMR-2508 : Levelizing timing graph completed, there are 71 levels in total.
 TMR-2501 : Timing graph initialized successfully.
 TMR-2503 : Start to update net delay, extr mode = 2.
-TMR-2504 : Update delay of 7686 nets completely.
+TMR-2504 : Update delay of 7419 nets completely.
 TMR-2502 : Annotate delay completely, extr mode = 2.
 TMR-3001 : Initiate 0 clocks from SDC.
 TMR-3004 : Map sdc constraints, there are 8 constraints in total.
@@ -732,11 +732,11 @@ TMR-3501 : Forward propagation: start to calculate arrival time...
 TMR-3502 : Backward propagation: start to calculate required time...
 TMR-3503 : Timing propagation completes.
 SYN-3001 : Running gate level optimization.
-SYN-2581 : Mapping with K=5, #lut = 1472 (3.49), #lev = 9 (2.23)
+SYN-2581 : Mapping with K=5, #lut = 1413 (3.49), #lev = 9 (2.31)
 SYN-2551 : Post LUT mapping optimization.
-SYN-2581 : Mapping with K=5, #lut = 1390 (3.45), #lev = 9 (2.19)
-SYN-3001 : Logic optimization runtime opt =   0.16 sec, map =   0.00 sec
-SYN-3001 : Mapper mapped 3066 instances into 1398 LUTs, name keeping = 72%.
+SYN-2581 : Mapping with K=5, #lut = 1330 (3.47), #lev = 9 (2.24)
+SYN-3001 : Logic optimization runtime opt =   0.14 sec, map =   0.00 sec
+SYN-3001 : Mapper mapped 2983 instances into 1338 LUTs, name keeping = 70%.
 SYN-3001 : Mapper removed 1 lut buffers
 RUN-1002 : start command "report_area -file SD-SDRAM-ISP-HDMI_gate.area"
 RUN-1001 : standard
@@ -749,16 +749,16 @@ IO Statistics
   #inout                    0
 
 LUT Statistics
-#Total_luts              3093
-  #lut4                  1109
-  #lut5                   290
+#Total_luts              2969
+  #lut4                  1058
+  #lut5                   281
   #lut6                     1
   #lut5_mx41                0
-  #lut4_alu1b            1693
+  #lut4_alu1b            1629
 
 Utilization Statistics
-#lut                     3094   out of  19600   15.79%
-#reg                     1966   out of  19600   10.03%
+#lut                     2970   out of  19600   15.15%
+#reg                     1902   out of  19600    9.70%
 #le                         0
 #dsp                        0   out of     29    0.00%
 #bram                       0   out of     64    0.00%
@@ -775,14 +775,14 @@ Report Hierarchy Area:
 +----------------------------------------------------------------------------------------------------------------------------+
 |Instance                           |Module                                     |lut     |ripple  |seq     |bram    |dsp     |
 +----------------------------------------------------------------------------------------------------------------------------+
-|top                                |sd_bmp_hdmi                                |1401    |1693    |1970    |6       |0       |
+|top                                |sd_bmp_hdmi                                |1341    |1629    |1906    |6       |0       |
 |  u_clk_wiz_0                      |PLL                                        |0       |0       |0       |0       |0       |
 |  u_clk_wiz_1                      |PLL_hdmi                                   |0       |0       |0       |0       |0       |
-|  u_ddr3_top                       |ddr3_top1                                  |255     |265     |356     |2       |0       |
+|  u_ddr3_top                       |ddr3_top1                                  |251     |265     |356     |2       |0       |
 |    physica_sdram                  |SDRAM                                      |0       |0       |0       |0       |0       |
-|    u_sdram_controller             |sdram_controller                           |134     |97      |78      |0       |0       |
-|      u_sdram_cmd                  |sdram_cmd                                  |49      |0       |13      |0       |0       |
-|      u_sdram_ctrl                 |sdram_ctrl                                 |85      |97      |48      |0       |0       |
+|    u_sdram_controller             |sdram_controller                           |130     |97      |78      |0       |0       |
+|      u_sdram_cmd                  |sdram_cmd                                  |46      |0       |13      |0       |0       |
+|      u_sdram_ctrl                 |sdram_ctrl                                 |84      |97      |48      |0       |0       |
 |      u_sdram_data                 |sdram_data                                 |0       |0       |17      |0       |0       |
 |    u_sdram_fifo_ctrl              |sdram_fifo_ctrl                            |121     |168     |278     |2       |0       |
 |      rdfifo                       |SOFTFIFO                                   |47      |55      |121     |1       |0       |
@@ -793,8 +793,8 @@ Report Hierarchy Area:
 |        ram_inst                   |ram_infer_SOFTFIFO                         |0       |0       |16      |1       |0       |
 |        rd_to_wr_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18      |0       |40      |0       |0       |
 |        wr_to_rd_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18      |0       |40      |0       |0       |
-|  u_hdmi_top                       |hdmi_top1                                  |782     |1206    |1249    |4       |0       |
-|    dpc                            |isp_dpc                                    |604     |883     |1089    |4       |0       |
+|  u_hdmi_top                       |hdmi_top1                                  |726     |1142    |1185    |4       |0       |
+|    dpc                            |isp_dpc                                    |548     |819     |1025    |4       |0       |
 |      linebuffer                   |shift_register                             |19      |37      |27      |4       |0       |
 |        gen_ram_inst[0]$u_ram      |simple_dp_ram                              |0       |0       |0       |1       |0       |
 |        gen_ram_inst[1]$u_ram      |simple_dp_ram                              |0       |0       |0       |1       |0       |
@@ -810,10 +810,10 @@ Report Hierarchy Area:
 |        Inst_green_serializer_10_1 |Serial_N_1_lvds_dat                        |9       |0       |13      |0       |0       |
 |        Inst_red_serializer_10_1   |Serial_N_1_lvds_dat                        |9       |0       |13      |0       |0       |
 |    u_video_driver                 |video_driver                               |28      |127     |25      |0       |0       |
-|  u_sd_ctrl_top                    |sd_ctrl_top                                |209     |104     |217     |0       |0       |
+|  u_sd_ctrl_top                    |sd_ctrl_top                                |210     |104     |217     |0       |0       |
 |    u_sd_init                      |sd_init                                    |118     |73      |111     |0       |0       |
-|    u_sd_read                      |sd_read                                    |91      |31      |106     |0       |0       |
-|  u_sd_read_photo                  |read_rawdata                               |152     |118     |144     |0       |0       |
+|    u_sd_read                      |sd_read                                    |92      |31      |106     |0       |0       |
+|  u_sd_read_photo                  |read_rawdata                               |151     |118     |144     |0       |0       |
 +----------------------------------------------------------------------------------------------------------------------------+
 
 SYN-1001 : Packing model "sd_bmp_hdmi" ...
@@ -822,16 +822,16 @@ SYN-1014 : Optimize round 1
 SYN-1015 : Optimize round 1, 1 better
 SYN-1014 : Optimize round 2
 SYN-1015 : Optimize round 2, 0 better
-SYN-4002 : Packing 1965 DFF/LATCH to SEQ ...
+SYN-4002 : Packing 1901 DFF/LATCH to SEQ ...
 SYN-4009 : Pack 42 carry chain into lslice
-SYN-4007 : Packing 1054 adder to BLE ...
-SYN-4008 : Packed 1054 adder and 5 SEQ to BLE.
+SYN-4007 : Packing 990 adder to BLE ...
+SYN-4008 : Packed 990 adder and 5 SEQ to BLE.
 SYN-4007 : Packing 0 gate4 to BLE ...
 SYN-4008 : Packed 0 gate4 and 0 SEQ to BLE.
 SYN-4012 : Packed 0 FxMUX
-RUN-1003 : finish command "optimize_gate -maparea SD-SDRAM-ISP-HDMI_gate.area" in  2.707352s wall, 2.156250s user + 0.046875s system = 2.203125s CPU (81.4%)
+RUN-1003 : finish command "optimize_gate -maparea SD-SDRAM-ISP-HDMI_gate.area" in  2.592737s wall, 1.906250s user + 0.046875s system = 1.953125s CPU (75.3%)
 
-RUN-1004 : used memory is 179 MB, reserved memory is 148 MB, peak memory is 206 MB
+RUN-1004 : used memory is 179 MB, reserved memory is 148 MB, peak memory is 204 MB
 RUN-1002 : start command "legalize_phy_inst"
 SYN-1011 : Flatten model sd_bmp_hdmi
 RUN-1002 : start command "export_db SD-SDRAM-ISP-HDMI_gate.db"
@@ -850,5 +850,4 @@ RUN-1001 : Exported violations
 RUN-1001 : Exported timing constraints
 RUN-1001 : Exported IO constraints
 RUN-1001 : Exported Inst constraints
-RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240703_211627.log"
-RUN-1001 : Backing up run's log file succeed.
+RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240703_211010.log"

@@ -44,18 +44,27 @@ wire          video_hs;
 wire          video_de;
 wire  [23:0]  video_rgb;
 wire  [23:0]  video_rgb_565;
+
+
+localparam BITS = 16;      // Assuming 8-bit pixel depth
+localparam WIDTH = 1920;  // Image width
+localparam HEIGHT = 1080;  // Image height
+localparam BAYER_PATTERN = 2; // RGGB pattern by default //0:RGGB 1:GRBG 2:GBRG 3:BGGR
+wire out_href,out_vsync;
+wire [BITS-1:0] out_raw;
+
 //wire  [11:0]  video_rgb;
 //*****************************************************
 //**                    main code
 //*****************************************************
 
 //将摄像头16bit数据转换为24bit的hdmi数据
-assign video_rgb = {video_rgb_565[15:11],3'b000,video_rgb_565[10:5],2'b00,
-                    video_rgb_565[4:0],3'b000};  
+// assign video_rgb = {video_rgb_565[15:11],3'b000,video_rgb_565[10:5],2'b00,
+//                     video_rgb_565[4:0],3'b000};  
 
 //转化RGB444数据
-//assign video_rgb = {video_rgb_565[14:11],video_rgb_565[8:5],
-                   // video_rgb_565[3:0]};  
+assign video_rgb = {out_raw[14:11],out_raw[8:5],
+                   out_raw[3:0]};  
 
 //例化视频显示驱动模块
 video_driver u_video_driver(
@@ -72,7 +81,27 @@ video_driver u_video_driver(
     .pixel_ypos     (pixel_ypos),
     .pixel_data     (data_in)
     );
-       
+
+
+   isp_dpc  #(.BITS(BITS),
+            .WIDTH(WIDTH),
+            .HEIGHT(HEIGHT),
+            .BAYER (BAYER_PATTERN) )  dpc
+   (
+        .pclk(pixel_clk),
+        .rst_n(sys_rst_n),
+
+        .threshold(0), //阈值越小,检测越松,坏点检测数越多
+
+        .in_href(video_hs),
+        .in_vsync(video_vs),
+        .in_raw(video_rgb_565),
+
+        .out_href(out_href),
+        .out_vsync(out_vsync),
+        .out_raw(out_raw)
+   );
+
 //例化HDMI驱动模块
 hdmi_tx #(.FAMILY("EG4"))	//EF2、EF3、EG4、AL3、PH1
 

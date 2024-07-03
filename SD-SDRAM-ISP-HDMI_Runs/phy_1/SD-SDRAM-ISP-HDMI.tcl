@@ -44,12 +44,12 @@ set ACTIVESTEP opt_place
 set rc [catch {
   open_project {SD-SDRAM-ISP-HDMI.prj}
   import_device eagle_s20.db -package EG4S20BG256
-  import_db {../syn_1/SD_HDMI_DAFENQI_gate.db}
-  read_sdc -ip SOFTFIFO ../../../RTL/ddr3-al_ip/SOFTFIFO.tcl
+  import_db {../syn_1/SD-SDRAM-ISP-HDMI_gate.db}
+  read_sdc -ip SOFTFIFO ../../import/ddr3-al_ip/SOFTFIFO.tcl
   config_chipwatcher "../../sd_HDMI.cwc" -dir ""
   compile_watcher
   place
-  export_db {SD_HDMI_DAFENQI_place.db}
+  export_db {SD-SDRAM-ISP-HDMI_place.db}
 } RESULT]
 if {$rc} {
   step_error opt_place
@@ -62,10 +62,10 @@ step_begin opt_route
 set ACTIVESTEP opt_route
 set rc [catch {
   route
-  report_area -io_info -file SD_HDMI_DAFENQI_phy.area
-  export_db {SD_HDMI_DAFENQI_pr.db}
+  report_area -io_info -file SD-SDRAM-ISP-HDMI_phy.area
+  export_db {SD-SDRAM-ISP-HDMI_pr.db}
   start_timer
-  report_timing -mode FINAL -net_info  -rpt_autogen true -file SD_HDMI_DAFENQI_phy.timing
+  report_timing -mode FINAL -net_info  -rpt_autogen true -file SD-SDRAM-ISP-HDMI_phy.timing
 } RESULT]
 if {$rc} {
   step_error opt_route
@@ -77,8 +77,8 @@ if {$rc} {
 step_begin bitgen
 set ACTIVESTEP bitgen
 set rc [catch {
-  export_bid SD_HDMI_DAFENQI_inst.bid
-  bitgen -bit "SD_HDMI_DAFENQI.bit"
+  export_bid SD-SDRAM-ISP-HDMI_inst.bid
+  bitgen -bit "SD-SDRAM-ISP-HDMI.bit"
 } RESULT]
 if {$rc} {
   step_error bitgen

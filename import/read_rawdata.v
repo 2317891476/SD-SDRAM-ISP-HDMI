@@ -185,7 +185,7 @@ always @(posedge clk or negedge rst_n) begin
                                     ddr_wr_datar <= {5'b0,sd_rd_val_data[9:4],5'b0};
                                 2'b01:
                                     ddr_wr_datar <= sd_rd_val_data;
-                                default:ddr_wr_datar <= {5'b0,sd_rd_val_data[9:4],5'b0};
+                                default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
                             endcase
                             ddr_wr_en <= 1'b1;
                         end
@@ -200,7 +200,7 @@ always @(posedge clk or negedge rst_n) begin
                                     ddr_wr_datar <= {5'b0,6'b0,sd_rd_val_data[8:4]};
                                 2'b01:
                                     ddr_wr_datar <= sd_rd_val_data;
-                                default:ddr_wr_datar <= {5'b0,6'b0,sd_rd_val_data[8:4]};
+                                default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
                             endcase
                             ddr_wr_en <= 1'b1;
                         end
@@ -216,7 +216,7 @@ always @(posedge clk or negedge rst_n) begin
                                     ddr_wr_datar <= {sd_rd_val_data[8:4],6'b0,5'b0};
                                 2'b01:
                                     ddr_wr_datar <= sd_rd_val_data;
-                                default:ddr_wr_datar <= {sd_rd_val_data[8:4],6'b0,5'b0};
+                                default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
                             endcase
                             ddr_wr_en <= 1'b1;
                         end
@@ -230,7 +230,7 @@ always @(posedge clk or negedge rst_n) begin
                                     ddr_wr_datar <= {5'b0,sd_rd_val_data[9:4],5'b0};
                                 2'b01:
                                     ddr_wr_datar <= sd_rd_val_data;
-                                default:ddr_wr_datar <= {5'b0,sd_rd_val_data[9:4],5'b0};
+                                default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
                             endcase
                             ddr_wr_en <= 1'b1;
                         end

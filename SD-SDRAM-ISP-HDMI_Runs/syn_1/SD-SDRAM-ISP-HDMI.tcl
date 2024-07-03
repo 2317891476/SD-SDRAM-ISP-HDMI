@@ -45,7 +45,7 @@ set rc [catch {
   open_project {SD-SDRAM-ISP-HDMI.prj}
   import_device eagle_s20.db -package EG4S20BG256
   elaborate -top {sd_bmp_hdmi}
-  export_db {SD_HDMI_DAFENQI_elaborate.db}
+  export_db {SD-SDRAM-ISP-HDMI_elaborate.db}
 } RESULT]
 if {$rc} {
   step_error read_design
@@ -57,10 +57,10 @@ if {$rc} {
 step_begin opt_rtl
 set ACTIVESTEP opt_rtl
 set rc [catch {
-  read_adc ../../../RTL/SD_HDMI.adc
+  read_adc ../../import/SD_HDMI.adc
   optimize_rtl
-  report_area -file SD_HDMI_DAFENQI_rtl.area
-  export_db {SD_HDMI_DAFENQI_rtl.db}
+  report_area -file SD-SDRAM-ISP-HDMI_rtl.area
+  export_db {SD-SDRAM-ISP-HDMI_rtl.db}
 } RESULT]
 if {$rc} {
   step_error opt_rtl
@@ -72,10 +72,10 @@ if {$rc} {
 step_begin opt_gate
 set ACTIVESTEP opt_gate
 set rc [catch {
-  read_sdc -ip SOFTFIFO ../../../RTL/ddr3-al_ip/SOFTFIFO.tcl
-  optimize_gate -maparea SD_HDMI_DAFENQI_gate.area
+  read_sdc -ip SOFTFIFO ../../import/ddr3-al_ip/SOFTFIFO.tcl
+  optimize_gate -maparea SD-SDRAM-ISP-HDMI_gate.area
   legalize_phy_inst
-  export_db {SD_HDMI_DAFENQI_gate.db}
+  export_db {SD-SDRAM-ISP-HDMI_gate.db}
 } RESULT]
 if {$rc} {
   step_error opt_gate
