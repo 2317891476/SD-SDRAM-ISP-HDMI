@@ -1,0 +1,15 @@
+
+set_pin_assignment	{ tmds_clk_p }	{ LOCATION = P1; IOSTANDARD = LVDS33; }
+set_pin_assignment	{ tmds_data_p[0] }	{ LOCATION = N1; IOSTANDARD = LVDS33; }
+set_pin_assignment	{ tmds_data_p[1] }	{ LOCATION = P4; IOSTANDARD = LVDS33; }
+set_pin_assignment	{ tmds_data_p[2] }	{ LOCATION = J3; IOSTANDARD = LVDS33; }
+
+set_pin_assignment	{ sys_clk }	{ LOCATION = R7; IOSTANDARD = LVCMOS33; }
+set_pin_assignment	{ sys_rst_n}	{ LOCATION = A9; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { sd_clk } { LOCATION = F15; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { sd_cs } { LOCATION = F13; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { sd_mosi  } { LOCATION = F14; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { sd_miso } { LOCATION = D14; IOSTANDARD = LVCMOS33; }
+
+set_pin_assignment	{ switch_video[0]}	{ LOCATION = A10; IOSTANDARD = LVCMOS33; }
+set_pin_assignment	{ switch_video[1]}	{ LOCATION = B10; IOSTANDARD = LVCMOS33; }

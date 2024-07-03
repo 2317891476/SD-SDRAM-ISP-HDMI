@@ -1,0 +1,70 @@
+standard
+***Report Model: sd_bmp_hdmi Device: EG4S20BG256***
+
+IO Statistics
+#IO                        12
+  #input                    5
+  #output                   7
+  #inout                    0
+
+LUT Statistics
+#Total_luts              1535
+  #lut4                   789
+  #lut5                    71
+  #lut6                     1
+  #lut5_mx41                0
+  #lut4_alu1b             674
+
+Utilization Statistics
+#lut                     1536   out of  19600    7.84%
+#reg                      907   out of  19600    4.63%
+#le                         0
+#dsp                        0   out of     29    0.00%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    2   out of     16   12.50%
+#pad                       16   out of    188    8.51%
+  #ireg                     0
+  #oreg                     4
+  #treg                     0
+#pll                        2   out of      4   50.00%
+
+Report Hierarchy Area:
++----------------------------------------------------------------------------------------------------------------------------+
+|Instance                           |Module                                     |lut     |ripple  |seq     |bram    |dsp     |
++----------------------------------------------------------------------------------------------------------------------------+
+|top                                |sd_bmp_hdmi                                |862     |674     |911     |2       |0       |
+|  u_clk_wiz_0                      |PLL                                        |0       |0       |0       |0       |0       |
+|  u_clk_wiz_1                      |PLL_hdmi                                   |0       |0       |0       |0       |0       |
+|  u_ddr3_top                       |ddr3_top1                                  |252     |265     |356     |2       |0       |
+|    physica_sdram                  |SDRAM                                      |0       |0       |0       |0       |0       |
+|    u_sdram_controller             |sdram_controller                           |131     |97      |78      |0       |0       |
+|      u_sdram_cmd                  |sdram_cmd                                  |46      |0       |13      |0       |0       |
+|      u_sdram_ctrl                 |sdram_ctrl                                 |85      |97      |48      |0       |0       |
+|      u_sdram_data                 |sdram_data                                 |0       |0       |17      |0       |0       |
+|    u_sdram_fifo_ctrl              |sdram_fifo_ctrl                            |121     |168     |278     |2       |0       |
+|      rdfifo                       |SOFTFIFO                                   |47      |55      |121     |1       |0       |
+|        ram_inst                   |ram_infer_SOFTFIFO                         |0       |0       |16      |1       |0       |
+|        rd_to_wr_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18      |0       |40      |0       |0       |
+|        wr_to_rd_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18      |0       |40      |0       |0       |
+|      wrfifo                       |SOFTFIFO                                   |43      |55      |121     |1       |0       |
+|        ram_inst                   |ram_infer_SOFTFIFO                         |0       |0       |16      |1       |0       |
+|        rd_to_wr_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18      |0       |40      |0       |0       |
+|        wr_to_rd_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18      |0       |40      |0       |0       |
+|  u_hdmi_top                       |hdmi_top1                                  |238     |187     |190     |0       |0       |
+|    u3_hdmi_tx                     |hdmi_tx                                    |210     |60      |165     |0       |0       |
+|      Inst_DVITransmitter          |DVITransmitter                             |210     |60      |165     |0       |0       |
+|        Inst_TMDSEncoder_blue      |TMDSEncoder                                |63      |20      |41      |0       |0       |
+|        Inst_TMDSEncoder_green     |TMDSEncoder                                |60      |20      |36      |0       |0       |
+|        Inst_TMDSEncoder_red       |TMDSEncoder                                |59      |20      |33      |0       |0       |
+|        Inst_blue_serializer_10_1  |Serial_N_1_lvds_dat                        |10      |0       |20      |0       |0       |
+|        Inst_clk_serializer_10_1   |Serial_N_1_lvds                            |2       |0       |7       |0       |0       |
+|        Inst_green_serializer_10_1 |Serial_N_1_lvds_dat                        |8       |0       |14      |0       |0       |
+|        Inst_red_serializer_10_1   |Serial_N_1_lvds_dat                        |8       |0       |14      |0       |0       |
+|    u_video_driver                 |video_driver                               |28      |127     |25      |0       |0       |
+|  u_sd_ctrl_top                    |sd_ctrl_top                                |218     |104     |217     |0       |0       |
+|    u_sd_init                      |sd_init                                    |125     |73      |111     |0       |0       |
+|    u_sd_read                      |sd_read                                    |93      |31      |106     |0       |0       |
+|  u_sd_read_photo                  |read_rawdata                               |151     |118     |144     |0       |0       |
++----------------------------------------------------------------------------------------------------------------------------+
