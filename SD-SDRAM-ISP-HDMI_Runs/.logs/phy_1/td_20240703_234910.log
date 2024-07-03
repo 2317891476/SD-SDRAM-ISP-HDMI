@@ -1376,4 +1376,3 @@ RUN-1003 : finish command "bitgen -bit SD-SDRAM-ISP-HDMI.bit" in  4.464930s wall
 
 RUN-1004 : used memory is 640 MB, reserved memory is 617 MB, peak memory is 804 MB
 RUN-1002 : start command "backup_run_log run.log ../.logs/phy_1/td_20240703_234910.log"
-RUN-1001 : Backing up run's log file succeed.

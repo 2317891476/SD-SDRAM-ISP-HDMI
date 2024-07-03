@@ -35,7 +35,9 @@ module isp_dpc
 	input in_href,
 	input in_vsync,
 	input [BITS-1:0] in_raw,
+    input in_de,
 
+    output out_de,
 	output out_href,
 	output out_vsync,
 	output [BITS-1:0] out_raw
@@ -290,19 +292,23 @@ module isp_dpc
 	localparam DLY_CLK = 10;
 	reg [DLY_CLK-1:0] href_dly;
 	reg [DLY_CLK-1:0] vsync_dly;
+    reg [DLY_CLK-1:0] de_dly;
 	always @ (posedge pclk or negedge rst_n) begin
 		if (!rst_n) begin
 			href_dly <= 0;
 			vsync_dly <= 0;
+            de_dly <=0;
 		end
 		else begin
 			href_dly <= {href_dly[DLY_CLK-2:0], in_href};
 			vsync_dly <= {vsync_dly[DLY_CLK-2:0], in_vsync};
+            de_dly <= {de_dly[DLY_CLK-2:0],in_de};
 		end
 	end
 	
 	assign out_href = href_dly[DLY_CLK-1];
 	assign out_vsync = vsync_dly[DLY_CLK-1];
+    assign out_de = de_dly[DLY_CLK-1];
 	assign out_raw = out_href ? t6_center : {BITS{1'b0}};
 
 	function [BITS-1:0] min;

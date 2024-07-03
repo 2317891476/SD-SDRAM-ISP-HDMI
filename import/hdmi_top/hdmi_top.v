@@ -50,10 +50,10 @@ localparam BITS = 16;      // Assuming 8-bit pixel depth
 localparam WIDTH = 1920;  // Image width
 localparam HEIGHT = 1080;  // Image height
 localparam BAYER_PATTERN = 2; // RGGB pattern by default //0:RGGB 1:GRBG 2:GBRG 3:BGGR
-wire out_href,out_vsync;
+wire out_href,out_vsync,out_de;
 wire [BITS-1:0] out_raw;
 
-wire out_href2,out_vsync2;
+wire out_href2,out_vsync2,out_de2;
 wire [BITS-1:0] out_raw2;
 //wire  [11:0]  video_rgb;
 //*****************************************************
@@ -98,7 +98,9 @@ video_driver u_video_driver(
         .in_href(video_hs),
         .in_vsync(video_vs),
         .in_raw(video_rgb_565),
+        .in_de(video_de),
 
+        .out_de(out_de),
         .out_href(out_href),
         .out_vsync(out_vsync),
         .out_raw(out_raw)
@@ -112,11 +114,14 @@ isp_bnr  #(.BITS(BITS),
      .pclk(pixel_clk),
      .rst_n(sys_rst_n),
 
-     .nr_level(4),
+     .nr_level(0),////0:NoNR 1-4:NRLevel
+
      .in_href(out_href),
      .in_vsync(out_vsync),
      .in_raw(out_raw),
+     .in_de(out_de),
 
+     .out_de(out_de2),
      .out_href(out_href2),
      .out_vsync(out_vsync2),
      .out_raw(out_raw2)
@@ -133,7 +138,7 @@ hdmi_tx #(.FAMILY("EG4"))	//EF2、EF3、EG4、AL3、PH1
     .VGA_RGB      (video_rgb),
     .VGA_HS    (out_href2), 
     .VGA_VS    (out_href2),
-    .VGA_DE       (1),
+    .VGA_DE       (out_de2),
                 
     .HDMI_CLK_P     (tmds_clk_p),
     //.tmds_clk_n     (tmds_clk_n),

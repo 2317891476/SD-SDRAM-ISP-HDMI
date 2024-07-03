@@ -1,7 +1,7 @@
 =========================================================================================================
 Auto created by Tang Dynasty v5.6.71036
    Copyright (c) 2012-2023 Anlogic Inc.
-Wed Jul  3 23:32:09 2024
+Wed Jul  3 23:49:49 2024
 =========================================================================================================
 
 
@@ -20,24 +20,24 @@ Path delay: 999.7ns max
 Slowest path delay 1.038ns
 ---------------------------------------------------------------------------------------------------------
 
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48 (1 paths)
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg1_syn_41 (1 paths)
 ---------------------------------------------------------------------------------------------------------
  Slack (max path):        998.662 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_54.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48.mi[1]
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_55.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg1_syn_41.mi[0]
  Process:                 Slow                                                            
  Data Path Delay:         1.038ns  (logic 0.289ns, net 0.749ns, 27% logic)                
  Logic Levels:            0                                                               
 
  Point                                                       Type                     Incr        Path      Info          
 ---------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_54.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_54.q[0] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[0]) net  (fanout = 1)       0.749 r     0.895      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48 path2reg1               0.143       1.038
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_55.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_55.q[1] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg1_syn_41.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[3]) net  (fanout = 1)       0.749 r     0.895      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg1_syn_41 path2reg0               0.143       1.038
  Arrival time                                                                        1.038                  (0 lvl)       
 
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48.clk                         0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg1_syn_41.clk                         0.000       0.000
  delay budget                                                                      999.700     999.700
  cell setup                                                                         -0.000     999.700
  clock uncertainty                                                                  -0.000     999.700
@@ -47,57 +47,57 @@ Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3
 
 ---------------------------------------------------------------------------------------------------------
 
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_45 (1 paths)
----------------------------------------------------------------------------------------------------------
- Slack (max path):        998.752 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_57.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_45.mi[1]
- Process:                 Slow                                                            
- Data Path Delay:         0.948ns  (logic 0.289ns, net 0.659ns, 30% logic)                
- Logic Levels:            0                                                               
-
- Point                                                       Type                     Incr        Path      Info          
----------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_57.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_57.q[0] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_45.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[2]) net  (fanout = 1)       0.659 r     0.805      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_45 path2reg1               0.143       0.948
- Arrival time                                                                        0.948                  (0 lvl)       
-
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_45.clk                         0.000       0.000
- delay budget                                                                      999.700     999.700
- cell setup                                                                         -0.000     999.700
- clock uncertainty                                                                  -0.000     999.700
- Required time                                                                     999.700            
----------------------------------------------------------------------------------------------------------
- Slack                                                                             998.752ns          
-
----------------------------------------------------------------------------------------------------------
-
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_51 (1 paths)
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40 (1 paths)
 ---------------------------------------------------------------------------------------------------------
  Slack (max path):        998.809 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_63.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_51.mi[0]
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_58.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40.mi[1]
  Process:                 Slow                                                            
  Data Path Delay:         0.891ns  (logic 0.289ns, net 0.602ns, 32% logic)                
  Logic Levels:            0                                                               
 
  Point                                                       Type                     Incr        Path      Info          
 ---------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_63.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_63.q[1] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_51.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[8]) net  (fanout = 1)       0.602 r     0.748      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_51 path2reg0               0.143       0.891
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_58.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_58.q[0] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[4]) net  (fanout = 1)       0.602 r     0.748      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40 path2reg1               0.143       0.891
  Arrival time                                                                        0.891                  (0 lvl)       
 
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_51.clk                         0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40.clk                         0.000       0.000
  delay budget                                                                      999.700     999.700
  cell setup                                                                         -0.000     999.700
  clock uncertainty                                                                  -0.000     999.700
  Required time                                                                     999.700            
 ---------------------------------------------------------------------------------------------------------
  Slack                                                                             998.809ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (max path):        998.935 ns                                                      
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_61.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40.mi[0]
+ Process:                 Slow                                                            
+ Data Path Delay:         0.765ns  (logic 0.289ns, net 0.476ns, 37% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_61.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_61.q[0] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[6]) net  (fanout = 1)       0.476 r     0.622      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40 path2reg0               0.143       0.765
+ Arrival time                                                                        0.765                  (0 lvl)       
+
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_40.clk                         0.000       0.000
+ delay budget                                                                      999.700     999.700
+ cell setup                                                                         -0.000     999.700
+ clock uncertainty                                                                  -0.000     999.700
+ Required time                                                                     999.700            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                             998.935ns          
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -110,81 +110,174 @@ Path delay: 999.7ns max
 
 10 endpoints analyzed totally, and 10 paths analyzed
 0 errors detected : 0 setup errors (TNS = 0.000), 0 hold errors (TNS = 0.000)
-Slowest path delay 0.891ns
+Slowest path delay 1.038ns
 ---------------------------------------------------------------------------------------------------------
 
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_43 (1 paths)
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_42 (1 paths)
 ---------------------------------------------------------------------------------------------------------
- Slack (max path):        998.809 ns                                                      
- Start Point:             u_hdmi_top/dpc/t3_med_of_med_b[5]_syn_12.clk                    
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_43.mi[1]
- Process:                 Slow                                                            
- Data Path Delay:         0.891ns  (logic 0.289ns, net 0.602ns, 32% logic)                
- Logic Levels:            0                                                               
-
- Point                                                       Type                     Incr        Path      Info          
----------------------------------------------------------------------------------------------------------
- u_hdmi_top/dpc/t3_med_of_med_b[5]_syn_12.clk                clock                   0.000       0.000
- u_hdmi_top/dpc/t3_med_of_med_b[5]_syn_12.q[0]               clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_43.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[9]) net  (fanout = 1)       0.602 r     0.748      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_43 path2reg1               0.143       0.891
- Arrival time                                                                        0.891                  (0 lvl)       
-
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_43.clk                         0.000       0.000
- delay budget                                                                      999.700     999.700
- cell setup                                                                         -0.000     999.700
- clock uncertainty                                                                  -0.000     999.700
- Required time                                                                     999.700            
----------------------------------------------------------------------------------------------------------
- Slack                                                                             998.809ns          
-
----------------------------------------------------------------------------------------------------------
-
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_47 (1 paths)
----------------------------------------------------------------------------------------------------------
- Slack (max path):        998.809 ns                                                      
+ Slack (max path):        998.662 ns                                                      
  Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_58.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_47.mi[0]
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_42.mi[1]
  Process:                 Slow                                                            
- Data Path Delay:         0.891ns  (logic 0.289ns, net 0.602ns, 32% logic)                
- Logic Levels:            0                                                               
-
- Point                                                       Type                     Incr        Path      Info          
----------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_58.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_58.q[0] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_47.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[1]) net  (fanout = 1)       0.602 r     0.748      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_47 path2reg0               0.143       0.891
- Arrival time                                                                        0.891                  (0 lvl)       
-
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_47.clk                         0.000       0.000
- delay budget                                                                      999.700     999.700
- cell setup                                                                         -0.000     999.700
- clock uncertainty                                                                  -0.000     999.700
- Required time                                                                     999.700            
----------------------------------------------------------------------------------------------------------
- Slack                                                                             998.809ns          
-
----------------------------------------------------------------------------------------------------------
-
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_48 (1 paths)
----------------------------------------------------------------------------------------------------------
- Slack (max path):        998.929 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_58.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_48.mi[1]
- Process:                 Slow                                                            
- Data Path Delay:         0.771ns  (logic 0.289ns, net 0.482ns, 37% logic)                
+ Data Path Delay:         1.038ns  (logic 0.289ns, net 0.749ns, 27% logic)                
  Logic Levels:            0                                                               
 
  Point                                                       Type                     Incr        Path      Info          
 ---------------------------------------------------------------------------------------------------------
  u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_58.clk clock                   0.000       0.000
  u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_58.q[1] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_48.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[2]) net  (fanout = 1)       0.482 r     0.628      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_48 path2reg1               0.143       0.771
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_42.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[3]) net  (fanout = 1)       0.749 r     0.895      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_42 path2reg1               0.143       1.038
+ Arrival time                                                                        1.038                  (0 lvl)       
+
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_42.clk                         0.000       0.000
+ delay budget                                                                      999.700     999.700
+ cell setup                                                                         -0.000     999.700
+ clock uncertainty                                                                  -0.000     999.700
+ Required time                                                                     999.700            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                             998.662ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_45 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (max path):        998.662 ns                                                      
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_55.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_45.mi[0]
+ Process:                 Slow                                                            
+ Data Path Delay:         1.038ns  (logic 0.289ns, net 0.749ns, 27% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_55.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_55.q[1] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_45.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[2]) net  (fanout = 1)       0.749 r     0.895      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_45 path2reg0               0.143       1.038
+ Arrival time                                                                        1.038                  (0 lvl)       
+
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_45.clk                         0.000       0.000
+ delay budget                                                                      999.700     999.700
+ cell setup                                                                         -0.000     999.700
+ clock uncertainty                                                                  -0.000     999.700
+ Required time                                                                     999.700            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                             998.662ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/add2_syn_62 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (max path):        998.662 ns                                                      
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_51.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/add2_syn_62.mi[1]           
+ Process:                 Slow                                                            
+ Data Path Delay:         1.038ns  (logic 0.289ns, net 0.749ns, 27% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_51.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_51.q[0] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/add2_syn_62.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[6]) net  (fanout = 1)       0.749 r     0.895      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/add2_syn_62             path2reg1               0.143       1.038
+ Arrival time                                                                        1.038                  (0 lvl)       
+
+ u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/add2_syn_62.clk                                 0.000       0.000
+ delay budget                                                                      999.700     999.700
+ cell setup                                                                         -0.000     999.700
+ clock uncertainty                                                                  -0.000     999.700
+ Required time                                                                     999.700            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                             998.662ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Fastest path checks:
+---------------------------------------------------------------------------------------------------------
+
+=========================================================================================================
+Timing constraint:        Path Delay                                                      
+Path delay: 999.7ns max
+
+10 endpoints analyzed totally, and 10 paths analyzed
+0 errors detected : 0 setup errors (TNS = 0.000), 0 hold errors (TNS = 0.000)
+Slowest path delay 1.038ns
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_36 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (max path):        998.662 ns                                                      
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_56.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_36.mi[0]
+ Process:                 Slow                                                            
+ Data Path Delay:         1.038ns  (logic 0.289ns, net 0.749ns, 27% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_56.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_56.q[0] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_36.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[3]) net  (fanout = 1)       0.749 r     0.895      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_36 path2reg0               0.143       1.038
+ Arrival time                                                                        1.038                  (0 lvl)       
+
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_36.clk                         0.000       0.000
+ delay budget                                                                      999.700     999.700
+ cell setup                                                                         -0.000     999.700
+ clock uncertainty                                                                  -0.000     999.700
+ Required time                                                                     999.700            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                             998.662ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_34 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (max path):        998.662 ns                                                      
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_59.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_34.mi[0]
+ Process:                 Slow                                                            
+ Data Path Delay:         1.038ns  (logic 0.289ns, net 0.749ns, 27% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_59.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_59.q[1] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_34.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[6]) net  (fanout = 1)       0.749 r     0.895      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_34 path2reg0               0.143       1.038
+ Arrival time                                                                        1.038                  (0 lvl)       
+
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_34.clk                         0.000       0.000
+ delay budget                                                                      999.700     999.700
+ cell setup                                                                         -0.000     999.700
+ clock uncertainty                                                                  -0.000     999.700
+ Required time                                                                     999.700            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                             998.662ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_36 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (max path):        998.929 ns                                                      
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_62.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_36.mi[0]
+ Process:                 Slow                                                            
+ Data Path Delay:         0.771ns  (logic 0.289ns, net 0.482ns, 37% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_62.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_62.q[1] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_36.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[8]) net  (fanout = 1)       0.482 r     0.628      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_36 path2reg0               0.143       0.771
  Arrival time                                                                        0.771                  (0 lvl)       
 
- u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_48.clk                         0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_36.clk                         0.000       0.000
  delay budget                                                                      999.700     999.700
  cell setup                                                                         -0.000     999.700
  clock uncertainty                                                                  -0.000     999.700
@@ -206,24 +299,24 @@ Path delay: 999.7ns max
 Slowest path delay 0.891ns
 ---------------------------------------------------------------------------------------------------------
 
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_39 (1 paths)
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/lt0_syn_46 (1 paths)
 ---------------------------------------------------------------------------------------------------------
  Slack (max path):        998.809 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_57.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_39.mi[1]
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_63.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/lt0_syn_46.mi[0]            
  Process:                 Slow                                                            
  Data Path Delay:         0.891ns  (logic 0.289ns, net 0.602ns, 32% logic)                
  Logic Levels:            0                                                               
 
  Point                                                       Type                     Incr        Path      Info          
 ---------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_57.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_57.q[0] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_39.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[2]) net  (fanout = 1)       0.602 r     0.748      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_39 path2reg1               0.143       0.891
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_63.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_63.q[0] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/lt0_syn_46.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[7]) net  (fanout = 1)       0.602 r     0.748      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/lt0_syn_46              path2reg0               0.143       0.891
  Arrival time                                                                        0.891                  (0 lvl)       
 
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_39.clk                         0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/lt0_syn_46.clk                                  0.000       0.000
  delay budget                                                                      999.700     999.700
  cell setup                                                                         -0.000     999.700
  clock uncertainty                                                                  -0.000     999.700
@@ -233,150 +326,57 @@ Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3
 
 ---------------------------------------------------------------------------------------------------------
 
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_42 (1 paths)
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_36 (1 paths)
 ---------------------------------------------------------------------------------------------------------
- Slack (max path):        998.938 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_54.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_42.mi[1]
+ Slack (max path):        998.885 ns                                                      
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_52.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_36.mi[1]
  Process:                 Slow                                                            
- Data Path Delay:         0.762ns  (logic 0.289ns, net 0.473ns, 37% logic)                
+ Data Path Delay:         0.815ns  (logic 0.289ns, net 0.526ns, 35% logic)                
  Logic Levels:            0                                                               
 
  Point                                                       Type                     Incr        Path      Info          
 ---------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_54.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_54.q[1] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_42.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[1]) net  (fanout = 1)       0.473 r     0.619      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_42 path2reg1               0.143       0.762
- Arrival time                                                                        0.762                  (0 lvl)       
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_52.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_52.q[0] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_36.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[0]) net  (fanout = 1)       0.526 r     0.672      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_36 path2reg1               0.143       0.815
+ Arrival time                                                                        0.815                  (0 lvl)       
 
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_42.clk                         0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_36.clk                         0.000       0.000
  delay budget                                                                      999.700     999.700
  cell setup                                                                         -0.000     999.700
  clock uncertainty                                                                  -0.000     999.700
  Required time                                                                     999.700            
 ---------------------------------------------------------------------------------------------------------
- Slack                                                                             998.938ns          
+ Slack                                                                             998.885ns          
 
 ---------------------------------------------------------------------------------------------------------
 
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_40 (1 paths)
+Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_42 (1 paths)
 ---------------------------------------------------------------------------------------------------------
- Slack (max path):        998.938 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_63.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_40.mi[0]
+ Slack (max path):        998.929 ns                                                      
+ Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_55.clk
+ End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_42.mi[1]
  Process:                 Slow                                                            
- Data Path Delay:         0.762ns  (logic 0.289ns, net 0.473ns, 37% logic)                
+ Data Path Delay:         0.771ns  (logic 0.289ns, net 0.482ns, 37% logic)                
  Logic Levels:            0                                                               
 
  Point                                                       Type                     Incr        Path      Info          
 ---------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_63.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_63.q[0] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_40.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[6]) net  (fanout = 1)       0.473 r     0.619      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_40 path2reg0               0.143       0.762
- Arrival time                                                                        0.762                  (0 lvl)       
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_55.clk clock                   0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_55.q[0] clk2q                   0.146 r     0.146
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_42.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[1]) net  (fanout = 1)       0.482 r     0.628      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_42 path2reg1               0.143       0.771
+ Arrival time                                                                        0.771                  (0 lvl)       
 
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_40.clk                         0.000       0.000
+ u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_42.clk                         0.000       0.000
  delay budget                                                                      999.700     999.700
  cell setup                                                                         -0.000     999.700
  clock uncertainty                                                                  -0.000     999.700
  Required time                                                                     999.700            
 ---------------------------------------------------------------------------------------------------------
- Slack                                                                             998.938ns          
-
----------------------------------------------------------------------------------------------------------
-
-Fastest path checks:
----------------------------------------------------------------------------------------------------------
-
-=========================================================================================================
-Timing constraint:        Path Delay                                                      
-Path delay: 999.7ns max
-
-10 endpoints analyzed totally, and 10 paths analyzed
-0 errors detected : 0 setup errors (TNS = 0.000), 0 hold errors (TNS = 0.000)
-Slowest path delay 1.038ns
----------------------------------------------------------------------------------------------------------
-
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_51 (1 paths)
----------------------------------------------------------------------------------------------------------
- Slack (max path):        998.662 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_61.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_51.mi[0]
- Process:                 Slow                                                            
- Data Path Delay:         1.038ns  (logic 0.289ns, net 0.749ns, 27% logic)                
- Logic Levels:            0                                                               
-
- Point                                                       Type                     Incr        Path      Info          
----------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_61.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_61.q[1] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_51.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[7]) net  (fanout = 1)       0.749 r     0.895      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_51 path2reg0               0.143       1.038
- Arrival time                                                                        1.038                  (0 lvl)       
-
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_51.clk                         0.000       0.000
- delay budget                                                                      999.700     999.700
- cell setup                                                                         -0.000     999.700
- clock uncertainty                                                                  -0.000     999.700
- Required time                                                                     999.700            
----------------------------------------------------------------------------------------------------------
- Slack                                                                             998.662ns          
-
----------------------------------------------------------------------------------------------------------
-
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/sub1_syn_54 (1 paths)
----------------------------------------------------------------------------------------------------------
- Slack (max path):        998.662 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_58.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/sub1_syn_54.mi[1]           
- Process:                 Slow                                                            
- Data Path Delay:         1.038ns  (logic 0.289ns, net 0.749ns, 27% logic)                
- Logic Levels:            0                                                               
-
- Point                                                       Type                     Incr        Path      Info          
----------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_58.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_58.q[0] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/sub1_syn_54.mi[1] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[4]) net  (fanout = 1)       0.749 r     0.895      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/sub1_syn_54             path2reg1               0.143       1.038
- Arrival time                                                                        1.038                  (0 lvl)       
-
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/sub1_syn_54.clk                                 0.000       0.000
- delay budget                                                                      999.700     999.700
- cell setup                                                                         -0.000     999.700
- clock uncertainty                                                                  -0.000     999.700
- Required time                                                                     999.700            
----------------------------------------------------------------------------------------------------------
- Slack                                                                             998.662ns          
-
----------------------------------------------------------------------------------------------------------
-
-Paths for end point u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg2_syn_51 (1 paths)
----------------------------------------------------------------------------------------------------------
- Slack (max path):        998.663 ns                                                      
- Start Point:             u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_61.clk
- End Point:               u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg2_syn_51.mi[0]
- Process:                 Slow                                                            
- Data Path Delay:         1.037ns  (logic 0.289ns, net 0.748ns, 27% logic)                
- Logic Levels:            0                                                               
-
- Point                                                       Type                     Incr        Path      Info          
----------------------------------------------------------------------------------------------------------
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_61.clk clock                   0.000       0.000
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_61.q[0] clk2q                   0.146 r     0.146
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg2_syn_51.mi[0] (u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[6]) net  (fanout = 1)       0.748 r     0.894      ../../import/ddr3-al_ip/SOFTFIFO.v(303)
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg2_syn_51 path2reg0               0.143       1.037
- Arrival time                                                                        1.037                  (0 lvl)       
-
- u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg2_syn_51.clk                         0.000       0.000
- delay budget                                                                      999.700     999.700
- cell setup                                                                         -0.000     999.700
- clock uncertainty                                                                  -0.000     999.700
- Required time                                                                     999.700            
----------------------------------------------------------------------------------------------------------
- Slack                                                                             998.663ns          
+ Slack                                                                             998.929ns          
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -386,7 +386,7 @@ Fastest path checks:
 =========================================================================================================
 Timing summary:                                                                           
 ---------------------------------------------------------------------------------------------------------
-Constraint path number: 40 (STA coverage = 0.44%)
+Constraint path number: 40 (STA coverage = 0.93%)
 Timing violations: 0 setup errors, and 0 hold errors.
 Minimal setup slack: 998.662, minimal hold slack: infinity
 

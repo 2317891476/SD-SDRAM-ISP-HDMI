@@ -8,30 +8,30 @@ IO Statistics
   #inout                    0
 
 Gate Statistics
-#Basic gates             3152
-  #and                    132
+#Basic gates             2718
+  #and                    133
   #nand                     0
   #or                      50
   #nor                      0
   #xor                     80
   #xnor                    13
   #buf                      0
-  #not                    101
+  #not                    102
   #bufif1                  16
-  #MX21                   145
+  #MX21                   144
   #FADD                     0
-  #DFF                   2615
+  #DFF                   2180
   #LATCH                    0
-#MACRO_ADD                220
+#MACRO_ADD                196
 #MACRO_EQ                  73
-#MACRO_MUX               1544
-#MACRO_OTHERS              16
+#MACRO_MUX               1491
+#MACRO_OTHERS              14
 
 Report Hierarchy Area:
 +-------------------------------------------------------------------------------------------------------+
 |Instance                           |Module                                     |gates  |seq    |macros |
 +-------------------------------------------------------------------------------------------------------+
-|top                                |sd_bmp_hdmi                                |537    |2615   |309    |
+|top                                |sd_bmp_hdmi                                |538    |2180   |283    |
 |  u_clk_wiz_0                      |PLL                                        |0      |0      |1      |
 |  u_clk_wiz_1                      |PLL_hdmi                                   |0      |0      |1      |
 |  u_ddr3_top                       |ddr3_top1                                  |172    |377    |54     |
@@ -49,24 +49,22 @@ Report Hierarchy Area:
 |        ram_inst                   |ram_infer_SOFTFIFO                         |0      |16     |1      |
 |        rd_to_wr_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
 |        wr_to_rd_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
-|  u_hdmi_top                       |hdmi_top1                                  |125    |1877   |192    |
-|    bnr                            |isp_bnr                                    |7      |580    |31     |
-|      linebuffer                   |shift_register                             |0      |27     |7      |
+|  u_hdmi_top                       |hdmi_top1                                  |126    |1442   |166    |
+|    bnr                            |isp_bnr                                    |0      |137    |5      |
+|      linebuffer                   |shift_register                             |0      |27     |5      |
 |        gen_ram_inst[0]$u_ram      |simple_dp_ram                              |0      |0      |1      |
 |        gen_ram_inst[1]$u_ram      |simple_dp_ram                              |0      |0      |1      |
-|        gen_ram_inst[2]$u_ram      |simple_dp_ram                              |0      |0      |1      |
-|        gen_ram_inst[3]$u_ram      |simple_dp_ram                              |0      |0      |1      |
 |    dpc                            |isp_dpc                                    |16     |1115   |64     |
 |      linebuffer                   |shift_register                             |0      |27     |7      |
 |        gen_ram_inst[0]$u_ram      |simple_dp_ram                              |0      |0      |1      |
 |        gen_ram_inst[1]$u_ram      |simple_dp_ram                              |0      |0      |1      |
 |        gen_ram_inst[2]$u_ram      |simple_dp_ram                              |0      |0      |1      |
 |        gen_ram_inst[3]$u_ram      |simple_dp_ram                              |0      |0      |1      |
-|    u3_hdmi_tx                     |hdmi_tx                                    |97     |157    |86     |
-|      Inst_DVITransmitter          |DVITransmitter                             |97     |157    |86     |
-|        Inst_TMDSEncoder_blue      |TMDSEncoder                                |30     |33     |27     |
-|        Inst_TMDSEncoder_green     |TMDSEncoder                                |33     |36     |28     |
-|        Inst_TMDSEncoder_red       |TMDSEncoder                                |30     |33     |27     |
+|    u3_hdmi_tx                     |hdmi_tx                                    |105    |165    |86     |
+|      Inst_DVITransmitter          |DVITransmitter                             |105    |165    |86     |
+|        Inst_TMDSEncoder_blue      |TMDSEncoder                                |33     |39     |27     |
+|        Inst_TMDSEncoder_green     |TMDSEncoder                                |35     |37     |28     |
+|        Inst_TMDSEncoder_red       |TMDSEncoder                                |33     |34     |27     |
 |        Inst_blue_serializer_10_1  |Serial_N_1_lvds_dat                        |2      |20     |1      |
 |        Inst_clk_serializer_10_1   |Serial_N_1_lvds                            |2      |7      |1      |
 |        Inst_green_serializer_10_1 |Serial_N_1_lvds_dat                        |0      |14     |1      |
