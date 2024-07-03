@@ -53,6 +53,8 @@ localparam BAYER_PATTERN = 2; // RGGB pattern by default //0:RGGB 1:GRBG 2:GBRG 
 wire out_href,out_vsync;
 wire [BITS-1:0] out_raw;
 
+wire out_href2,out_vsync2;
+wire [BITS-1:0] out_raw2;
 //wire  [11:0]  video_rgb;
 //*****************************************************
 //**                    main code
@@ -63,8 +65,8 @@ wire [BITS-1:0] out_raw;
 //                     video_rgb_565[4:0],3'b000};  
 
 //转化RGB444数据
-assign video_rgb = {out_raw[14:11],out_raw[8:5],
-                   out_raw[3:0]};  
+assign video_rgb = {out_raw2[15:11],3'b000,out_raw2[10:5],2'b00,
+                   out_raw2[4:0],3'b000};  
 
 //例化视频显示驱动模块
 video_driver u_video_driver(
@@ -102,6 +104,24 @@ video_driver u_video_driver(
         .out_raw(out_raw)
    );
 
+isp_bnr  #(.BITS(BITS),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT),
+         .BAYER (BAYER_PATTERN) )  bnr
+(
+     .pclk(pixel_clk),
+     .rst_n(sys_rst_n),
+
+     .nr_level(4),
+     .in_href(out_href),
+     .in_vsync(out_vsync),
+     .in_raw(out_raw),
+
+     .out_href(out_href2),
+     .out_vsync(out_vsync2),
+     .out_raw(out_raw2)
+);
+
 //例化HDMI驱动模块
 hdmi_tx #(.FAMILY("EG4"))	//EF2、EF3、EG4、AL3、PH1
 
@@ -111,9 +131,9 @@ hdmi_tx #(.FAMILY("EG4"))	//EF2、EF3、EG4、AL3、PH1
     .RST_N        (sys_rst_n),
                 
     .VGA_RGB      (video_rgb),
-    .VGA_HS    (video_hs), 
-    .VGA_VS    (video_vs),
-    .VGA_DE       (video_de),
+    .VGA_HS    (out_href2), 
+    .VGA_VS    (out_href2),
+    .VGA_DE       (1),
                 
     .HDMI_CLK_P     (tmds_clk_p),
     //.tmds_clk_n     (tmds_clk_n),
