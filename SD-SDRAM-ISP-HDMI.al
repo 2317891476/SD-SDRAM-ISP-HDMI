@@ -257,6 +257,38 @@
                     <Attr Name="CompileOrder" Val="40"/>
                 </FileInfo>
             </File>
+            <File Path="import/hdmi_top/ISP_awb_top.v">
+                <FileInfo>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="41"/>
+                </FileInfo>
+            </File>
+            <File Path="import/hdmi_top/ISP_cal_awb.v">
+                <FileInfo>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="42"/>
+                </FileInfo>
+            </File>
+            <File Path="import/hdmi_top/ISP_static_awb.v">
+                <FileInfo>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="43"/>
+                </FileInfo>
+            </File>
+            <File Path="import/hdmi_top/ISP_wb.v">
+                <FileInfo>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="44"/>
+                </FileInfo>
+            </File>
         </Verilog>
         <VHDL>
             <File Path="import/hdmi-rtl/enc_file/SerializerN_1_lvds.enc.vhd">

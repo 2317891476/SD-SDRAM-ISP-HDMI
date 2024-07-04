@@ -1,35 +1,35 @@
 eagle_s20
-13 387 23 0 40 40 0 0
-998.662 infinity sd_bmp_hdmi eagle_s20 EG4S20BG256 Detail NA 26 4
+13 387 209 0 40 40 0 0
+998.646 infinity sd_bmp_hdmi eagle_s20 EG4S20BG256 Detail NA 26 4
 Path delay: 999.7ns max
 13 10 10 1
 Max path
 23 3
-Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_35
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_53
 23 998.662000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_57.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_35
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_57.clk
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_35
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_58.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_53
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_58.clk
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_53
 25 998.662000 999.584000 0.922000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[4] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_35.mi[0]
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[3] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_53.mi[0]
 
 
-Endpoint: u_ddr3_top/u_sdram_controller/u_sdram_ctrl/lt2_syn_50
-50 998.662000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_51.clk->u_ddr3_top/u_sdram_controller/u_sdram_ctrl/lt2_syn_50
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_51.clk
-u_ddr3_top/u_sdram_controller/u_sdram_ctrl/lt2_syn_50
-52 998.662000 999.584000 0.922000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[6] u_ddr3_top/u_sdram_controller/u_sdram_ctrl/lt2_syn_50.mi[1]
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48
+50 998.809000 1 1
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_55.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_55.clk
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48
+52 998.809000 999.584000 0.775000 0 1
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[4] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48.mi[1]
 
 
-Endpoint: u_ddr3_top/u_sdram_controller/u_sdram_ctrl/add3_syn_62
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48
 77 998.809000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_33.clk->u_ddr3_top/u_sdram_controller/u_sdram_ctrl/add3_syn_62
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_33.clk
-u_ddr3_top/u_sdram_controller/u_sdram_ctrl/add3_syn_62
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_58.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_58.clk
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48
 79 998.809000 999.584000 0.775000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[9] u_ddr3_top/u_sdram_controller/u_sdram_ctrl/add3_syn_62.mi[0]
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[5] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg3_syn_48.mi[0]
 
 
 
@@ -38,31 +38,31 @@ Path delay: 999.7ns max
 106 10 10 1
 Max path
 116 3
-Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_51
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_40
 116 998.662000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_58.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_51
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_58.clk
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_51
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_55.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_40
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_55.clk
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_40
 118 998.662000 999.584000 0.922000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[5] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg0_syn_51.mi[0]
-
-
-Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/sub1_syn_54
-143 998.809000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_55.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/sub1_syn_54
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_55.clk
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/sub1_syn_54
-145 998.809000 999.584000 0.775000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[2] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/sub1_syn_54.mi[0]
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[8] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg1_syn_40.mi[0]
 
 
 Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_44
-170 998.929000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_61.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_44
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_61.clk
+143 998.932000 1 1
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_60.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_44
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/rd_to_wr_cross_inst/reg2_syn_60.clk
 u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_44
-172 998.929000 999.584000 0.655000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[6] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_44.mi[0]
+145 998.932000 999.584000 0.652000 0 1
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[9] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_44.mi[1]
+
+
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_49
+170 998.938000 1 1
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_55.clk->u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_49
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg0_syn_55.clk
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_49
+172 998.938000 999.584000 0.646000 0 1
+u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[2] u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/wr_to_rd_cross_inst/reg3_syn_49.mi[0]
 
 
 
@@ -71,31 +71,31 @@ Path delay: 999.7ns max
 199 10 10 1
 Max path
 209 3
-Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_42
-209 998.662000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_55.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_42
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_55.clk
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_42
-211 998.662000 999.584000 0.922000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[2] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_42.mi[1]
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_41
+209 998.646000 1 1
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_58.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_41
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_58.clk
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_41
+211 998.646000 999.584000 0.938000 0 1
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[5] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_41.mi[1]
 
 
-Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_39
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_41
 236 998.662000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_61.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_39
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_61.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_41
 u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_61.clk
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_39
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_41
 238 998.662000 999.584000 0.922000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[6] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_39.mi[0]
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[6] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_41.mi[0]
 
 
-Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_37
-263 998.662000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/reg0_syn_61.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_37
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/reg0_syn_61.clk
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_37
-265 998.662000 999.584000 0.922000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[8] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg1_syn_37.mi[0]
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_47
+263 998.722000 1 1
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_55.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_47
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg0_syn_55.clk
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_47
+265 998.722000 999.584000 0.862000 0 1
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/primary_addr_gray_reg[2] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/rd_to_wr_cross_inst/reg3_syn_47.mi[1]
 
 
 
@@ -104,31 +104,31 @@ Path delay: 999.7ns max
 292 10 10 1
 Max path
 302 3
-Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_35
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_43
 302 998.662000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_58.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_35
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_58.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_43
 u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_58.clk
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_35
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_43
 304 998.662000 999.584000 0.922000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[3] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_35.mi[1]
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[2] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_43.mi[0]
 
 
-Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg1_syn_40
-329 998.662000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_52.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg1_syn_40
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_52.clk
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg1_syn_40
-331 998.662000 999.584000 0.922000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[1] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg1_syn_40.mi[0]
+Endpoint: u_hdmi_top/awb/cal_awb/div_bgain/status[0]_syn_12696
+329 998.809000 1 1
+Timing path: u_hdmi_top/awb/cal_awb/div_bgain/status[0]_syn_12698.clk->u_hdmi_top/awb/cal_awb/div_bgain/status[0]_syn_12696
+u_hdmi_top/awb/cal_awb/div_bgain/status[0]_syn_12698.clk
+u_hdmi_top/awb/cal_awb/div_bgain/status[0]_syn_12696
+331 998.809000 999.584000 0.775000 0 1
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[9] u_hdmi_top/awb/cal_awb/div_bgain/status[0]_syn_12696.mi[0]
 
 
-Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_38
-356 998.785000 1 1
-Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_55.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_38
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_55.clk
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_38
-358 998.785000 999.584000 0.799000 0 1
-u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[2] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_38.mi[1]
+Endpoint: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_40
+356 998.935000 1 1
+Timing path: u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_61.clk->u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_40
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg0_syn_61.clk
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_40
+358 998.935000 999.584000 0.649000 0 1
+u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/primary_addr_gray_reg[5] u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/wr_to_rd_cross_inst/reg3_syn_40.mi[0]
 
 
 
@@ -146,8 +146,8 @@ Warning: No clock constraint on 9 clock net(s):
 	u_clk_wiz_1/clk0_out
 	u_ddr3_top/clk_sdram
 	u_ddr3_top/u_sdram_fifo_ctrl/clk_ref
+	u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/clkr
 	u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/clkw
-	u_hdmi_top/debayer_l/pclk
 	u_sd_ctrl_top/u_sd_init/div_clk_syn_4
 	u_sd_ctrl_top/u_sd_read/clk_ref_180deg
 

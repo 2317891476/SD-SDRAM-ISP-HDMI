@@ -231,7 +231,7 @@ module isp_demosaic_m
 		end
 	end
 
-	localparam DLY_CLK = 2;
+	localparam DLY_CLK = 1920;
 	reg [DLY_CLK-1:0] href_dly;
 	reg [DLY_CLK-1:0] vsync_dly;
     reg [DLY_CLK-1:0] de_dly;

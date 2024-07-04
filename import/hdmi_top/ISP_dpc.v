@@ -36,8 +36,6 @@ module isp_dpc
 	input in_vsync,
 	input [BITS-1:0] in_raw,
     input in_de,
-    //input pixel_x,
-    //input pixel_y,
 
     output out_de,
 	output out_href,

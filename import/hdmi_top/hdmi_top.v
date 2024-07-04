@@ -203,11 +203,9 @@ video_driver u_video_driver(
 //          .out_g(video_rgb[15:8]),
 //          .out_b(video_rgb[7:0])
 // );
+wire [7:0] out_r0,out_b0,out_g0;
 
-
-isp_demosaic_l
-
-#(
+isp_demosaic_l#(
 	.WIDTH(WIDTH),
     .HEIGHT(HEIGHT),
 	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
@@ -224,10 +222,36 @@ debayer_l
          .out_de(out_de),
          .out_href(out_href),
          .out_vsync(out_vsync),
+         .out_r(out_r0),
+         .out_g(out_g0),
+         .out_b(out_b0)
+);
+
+ISP_awb_top#(
+	.WIDTH(WIDTH),
+    .HEIGHT(HEIGHT),
+	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
+)
+awb
+(
+	    .pclk(pixel_clk),
+         .rst_n(sys_rst_n),
+         .in_href(out_href),
+         .in_vsync(out_vsync),
+         //.in_raw(video_rgb_565[15:8]),
+         .in_r(out_r0),
+         .in_g(out_g0),
+         .in_b(out_b0),
+         .in_de(out_de),
+
+         .out_de(out_de2),
+         .out_href(out_href2),
+         .out_vsync(out_vsync2),
          .out_r(video_rgb[23:16]),
          .out_g(video_rgb[15:8]),
          .out_b(video_rgb[7:0])
 );
+
 //????HDMI???????
 hdmi_tx #(.FAMILY("EG4"))	//EF2??EF3??EG4??AL3??PH1
 
