@@ -252,7 +252,7 @@ module isp_bnr
 		end
 	end
 
-	localparam DLY_CLK = 7;
+	localparam DLY_CLK = 2;
 	reg [DLY_CLK-1:0] href_dly;
 	reg [DLY_CLK-1:0] vsync_dly;
     reg [DLY_CLK-1:0] de_dly;

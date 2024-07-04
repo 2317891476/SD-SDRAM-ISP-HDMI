@@ -36,6 +36,8 @@ module isp_dpc
 	input in_vsync,
 	input [BITS-1:0] in_raw,
     input in_de,
+    //input pixel_x,
+    //input pixel_y,
 
     output out_de,
 	output out_href,
@@ -289,7 +291,7 @@ module isp_dpc
 		end
 	end
 
-	localparam DLY_CLK = 10;
+	localparam DLY_CLK = 6;
 	reg [DLY_CLK-1:0] href_dly;
 	reg [DLY_CLK-1:0] vsync_dly;
     reg [DLY_CLK-1:0] de_dly;

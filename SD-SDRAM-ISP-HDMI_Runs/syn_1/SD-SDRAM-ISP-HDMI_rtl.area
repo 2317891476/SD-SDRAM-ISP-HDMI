@@ -8,49 +8,56 @@ IO Statistics
   #inout                    0
 
 Gate Statistics
-#Basic gates             1559
-  #and                    167
+#Basic gates             2994
+  #and                    135
   #nand                     0
-  #or                      50
+  #or                      51
   #nor                      0
   #xor                     85
   #xnor                    21
   #buf                      0
-  #not                    106
+  #not                    114
   #bufif1                  16
-  #MX21                   145
+  #MX21                   333
   #FADD                     0
-  #DFF                    969
+  #DFF                   2239
   #LATCH                    0
-#MACRO_ADD                140
-#MACRO_EQ                  73
-#MACRO_MUX                543
-#MACRO_OTHERS               8
+#MACRO_ADD                349
+#MACRO_EQ                  75
+#MACRO_MUX               1559
+#MACRO_OTHERS              14
 
 Report Hierarchy Area:
 +-------------------------------------------------------------------------------------------------------+
 |Instance                           |Module                                     |gates  |seq    |macros |
 +-------------------------------------------------------------------------------------------------------+
-|top                                |sd_bmp_hdmi                                |590    |969    |221    |
+|top                                |sd_bmp_hdmi                                |755    |2239   |438    |
 |  u_clk_wiz_0                      |PLL                                        |0      |0      |1      |
 |  u_clk_wiz_1                      |PLL_hdmi                                   |0      |0      |1      |
-|  u_ddr3_top                       |ddr3_top1                                  |172    |370    |54     |
+|  u_ddr3_top                       |ddr3_top1                                  |172    |369    |54     |
 |    physica_sdram                  |SDRAM                                      |0      |0      |0      |
 |    u_sdram_controller             |sdram_controller                           |79     |99     |32     |
 |      u_sdram_cmd                  |sdram_cmd                                  |19     |18     |10     |
 |      u_sdram_ctrl                 |sdram_ctrl                                 |43     |48     |22     |
 |      u_sdram_data                 |sdram_data                                 |17     |33     |0      |
-|    u_sdram_fifo_ctrl              |sdram_fifo_ctrl                            |93     |271    |22     |
-|      rdfifo                       |SOFTFIFO                                   |40     |114    |8      |
-|        ram_inst                   |ram_infer_SOFTFIFO                         |0      |9      |1      |
+|    u_sdram_fifo_ctrl              |sdram_fifo_ctrl                            |93     |270    |22     |
+|      rdfifo                       |SOFTFIFO                                   |40     |113    |8      |
+|        ram_inst                   |ram_infer_SOFTFIFO                         |0      |8      |1      |
 |        rd_to_wr_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
 |        wr_to_rd_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
 |      wrfifo                       |SOFTFIFO                                   |40     |121    |8      |
 |        ram_inst                   |ram_infer_SOFTFIFO                         |0      |16     |1      |
 |        rd_to_wr_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
 |        wr_to_rd_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
-|  u_hdmi_top                       |hdmi_top1                                  |178    |238    |104    |
-|    trans                          |bayer_to_rgb888                            |43     |24     |2      |
+|  u_hdmi_top                       |hdmi_top1                                  |343    |1509   |321    |
+|    debayer_h                      |isp_demosaic                               |207    |1297   |219    |
+|      linebuffer                   |shift_register                             |0      |19     |9      |
+|        gen_ram_inst[0]$u_ram      |simple_dp_ram                              |0      |0      |1      |
+|        gen_ram_inst[1]$u_ram      |simple_dp_ram                              |0      |0      |1      |
+|        gen_ram_inst[2]$u_ram      |simple_dp_ram                              |0      |0      |1      |
+|        gen_ram_inst[3]$u_ram      |simple_dp_ram                              |0      |0      |1      |
+|        gen_ram_inst[4]$u_ram      |simple_dp_ram                              |0      |0      |1      |
+|        gen_ram_inst[5]$u_ram      |simple_dp_ram                              |0      |0      |1      |
 |    u3_hdmi_tx                     |hdmi_tx                                    |131    |187    |91     |
 |      Inst_DVITransmitter          |DVITransmitter                             |131    |187    |91     |
 |        Inst_TMDSEncoder_blue      |TMDSEncoder                                |47     |48     |29     |
@@ -60,7 +67,7 @@ Report Hierarchy Area:
 |        Inst_clk_serializer_10_1   |Serial_N_1_lvds                            |2      |7      |1      |
 |        Inst_green_serializer_10_1 |Serial_N_1_lvds_dat                        |0      |14     |1      |
 |        Inst_red_serializer_10_1   |Serial_N_1_lvds_dat                        |0      |14     |1      |
-|    u_video_driver                 |video_driver                               |4      |27     |11     |
+|    u_video_driver                 |video_driver                               |5      |25     |11     |
 |  u_sd_ctrl_top                    |sd_ctrl_top                                |155    |217    |37     |
 |    u_sd_init                      |sd_init                                    |105    |111    |23     |
 |    u_sd_read                      |sd_read                                    |43     |106    |14     |

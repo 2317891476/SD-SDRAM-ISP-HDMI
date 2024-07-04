@@ -189,6 +189,7 @@
             </File>
             <File Path="import/hdmi_top/ISP_dpc.v">
                 <FileInfo>
+                    <Attr Name="AutoExcluded" Val="true"/>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
                     <Attr Name="BelongTo" Val="design_1"/>
@@ -205,6 +206,7 @@
             </File>
             <File Path="import/hdmi_top/ISP_bnr.v">
                 <FileInfo>
+                    <Attr Name="AutoExcluded" Val="true"/>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
                     <Attr Name="BelongTo" Val="design_1"/>
@@ -213,10 +215,28 @@
             </File>
             <File Path="import/hdmi_top/bayer_rgb888.v">
                 <FileInfo>
+                    <Attr Name="AutoExcluded" Val="true"/>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
                     <Attr Name="BelongTo" Val="design_1"/>
                     <Attr Name="CompileOrder" Val="36"/>
+                </FileInfo>
+            </File>
+            <File Path="import/hdmi_top/ISP_debayer.v">
+                <FileInfo>
+                    <Attr Name="AutoExcluded" Val="true"/>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="37"/>
+                </FileInfo>
+            </File>
+            <File Path="import/hdmi_top/ISP_debayer_h.v">
+                <FileInfo>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="38"/>
                 </FileInfo>
             </File>
         </Verilog>

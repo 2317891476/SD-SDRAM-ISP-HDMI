@@ -43,7 +43,7 @@ wire          clk_locked;
 wire          video_hs;
 wire          video_de;
 wire  [23:0]  video_rgb;
-wire  [23:0]  video_rgb_565;
+wire  [15:0]  video_rgb_565;
 
 
 localparam BITS = 16;      // Assuming 8-bit pixel depth
@@ -65,8 +65,8 @@ wire [BITS-1:0] out_raw2;
 //                     video_rgb_565[4:0],3'b000};  
 
 //???RGB444????
-// assign video_rgb = {out_raw2[15:11],3'b000,out_raw2[10:5],2'b00,
-//                    out_raw2[4:0],3'b000};  
+// assign video_rgb = {out_raw[15:11],3'b000,out_raw[10:5],2'b00,
+//                    out_raw[4:0],3'b000};  
 
 //?????????????????
 video_driver u_video_driver(
@@ -84,57 +84,100 @@ video_driver u_video_driver(
     .pixel_data     (data_in)
     );
 
+    // ISP_debayer #(.BITS(BITS),
+    //          .WIDTH(WIDTH),
+    //          .HEIGHT(HEIGHT)
+    //           )  debayer
+    // (
+    //      .pclk(pixel_clk),
+    //      .rst_n(sys_rst_n),
 
-   isp_dpc  #(.BITS(BITS),
-            .WIDTH(WIDTH),
-            .HEIGHT(HEIGHT),
-            .BAYER (BAYER_PATTERN) )  dpc
-   (
-        .pclk(pixel_clk),
-        .rst_n(sys_rst_n),
 
-        .threshold(0), //????��,??????,???????????
+    //      .in_href(video_hs),
+    //      .in_vsync(video_vs),
+    //      .in_raw(video_rgb_565),
+    //      .in_de(video_de),
 
-        .in_href(video_hs),
-        .in_vsync(video_vs),
-        .in_raw(video_rgb_565),
-        .in_de(video_de),
+    //      .out_de(out_de),
+    //      .out_href(out_href),
+    //      .out_vsync(out_vsync),
+    //      .rgb565(out_raw)
+    // );
 
-        .out_de(out_de),
-        .out_href(out_href),
-        .out_vsync(out_vsync),
-        .out_raw(out_raw)
-   );
+//    isp_dpc  #(.BITS(BITS),
+//             .WIDTH(WIDTH),
+//             .HEIGHT(HEIGHT),
+//             .BAYER (BAYER_PATTERN) )  dpc
+//    (
+//         .pclk(pixel_clk),
+//         .rst_n(sys_rst_n),
 
-isp_bnr  #(.BITS(BITS),
-         .WIDTH(WIDTH),
-         .HEIGHT(HEIGHT),
-         .BAYER (BAYER_PATTERN) )  bnr
+//         .threshold(10'd1000), //????��,??????,???????????
+
+//         .in_href(video_hs),
+//         .in_vsync(video_vs),
+//         .in_raw(video_rgb_565),
+//         .in_de(video_de),
+
+//         .out_de(out_de),
+//         .out_href(out_href),
+//         .out_vsync(out_vsync),
+//         .out_raw(out_raw)
+//    );
+
+// isp_bnr  #(.BITS(BITS),
+//          .WIDTH(WIDTH),
+//          .HEIGHT(HEIGHT),
+//          .BAYER (BAYER_PATTERN) )  bnr
+// (
+//      .pclk(pixel_clk),
+//      .rst_n(sys_rst_n),
+
+//      .nr_level(1),////0:NoNR 1-4:NRLevel
+
+//      .in_href(out_href),
+//      .in_vsync(out_vsync),
+//      .in_raw(out_raw),
+//      .in_de(out_de),
+
+//      .out_de(out_de2),
+//      .out_href(out_href2),
+//      .out_vsync(out_vsync2),
+//      .out_raw(out_raw2)
+// );
+
+// bayer_to_rgb888 trans(
+//     .pclk(pixel_clk),
+//     .rst(sys_rst_n),
+//     .bayer_data(data_in),
+//     .pixel_x(pixel_xpos),
+//     .pixel_y(pixel_ypos),
+
+//     .rgb888(video_rgb)
+// );
+
+isp_demosaic
+
+#(
+	.WIDTH(WIDTH),
+    .HEIGHT(HEIGHT),
+	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
+)
+debayer_h
 (
-     .pclk(pixel_clk),
-     .rst_n(sys_rst_n),
+	.pclk(pixel_clk),
+         .rst_n(sys_rst_n),
+         .in_href(video_hs),
+         .in_vsync(video_vs),
+         .in_raw(video_rgb_565[15:8]),
+         .in_de(video_de),
 
-     .nr_level(0),////0:NoNR 1-4:NRLevel
-
-     .in_href(out_href),
-     .in_vsync(out_vsync),
-     .in_raw(out_raw),
-     .in_de(out_de),
-
-     .out_de(out_de2),
-     .out_href(out_href2),
-     .out_vsync(out_vsync2),
-     .out_raw(out_raw2)
-);
-
-bayer_to_rgb888 trans(
-    .pclk(pixel_clk),
-    .rst(sys_rst_n),
-    .bayer_data(data_in),
-    .pixel_x(pixel_xpos),
-    .pixel_y(pixel_ypos),
-
-    .rgb888(video_rgb)
+         .out_de(out_de),
+         .out_href(out_href),
+         .out_vsync(out_vsync),
+         .out_r(video_rgb[23:16]),
+         .out_g(video_rgb[15:8]),
+         .out_b(video_rgb[7:0])
 );
 
 //????HDMI???????
@@ -146,9 +189,9 @@ hdmi_tx #(.FAMILY("EG4"))	//EF2??EF3??EG4??AL3??PH1
     .RST_N        (sys_rst_n),
                 
     .VGA_RGB      (video_rgb),
-    .VGA_HS    (video_hs), 
-    .VGA_VS    (video_vs),
-    .VGA_DE       (video_de),
+    .VGA_HS    (out_href), 
+    .VGA_VS    (out_vsync),
+    .VGA_DE       (out_de),
                 
     .HDMI_CLK_P     (tmds_clk_p),
     //.tmds_clk_n     (tmds_clk_n),
