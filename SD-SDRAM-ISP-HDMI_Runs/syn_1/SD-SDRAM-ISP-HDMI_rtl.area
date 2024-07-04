@@ -8,30 +8,30 @@ IO Statistics
   #inout                    0
 
 Gate Statistics
-#Basic gates             2994
-  #and                    135
+#Basic gates             1628
+  #and                    129
   #nand                     0
-  #or                      51
+  #or                      49
   #nor                      0
   #xor                     85
   #xnor                    21
   #buf                      0
-  #not                    114
+  #not                    108
   #bufif1                  16
-  #MX21                   333
+  #MX21                   147
   #FADD                     0
-  #DFF                   2239
+  #DFF                   1073
   #LATCH                    0
-#MACRO_ADD                349
-#MACRO_EQ                  75
-#MACRO_MUX               1559
-#MACRO_OTHERS              14
+#MACRO_ADD                150
+#MACRO_EQ                  71
+#MACRO_MUX                616
+#MACRO_OTHERS              10
 
 Report Hierarchy Area:
 +-------------------------------------------------------------------------------------------------------+
 |Instance                           |Module                                     |gates  |seq    |macros |
 +-------------------------------------------------------------------------------------------------------+
-|top                                |sd_bmp_hdmi                                |755    |2239   |438    |
+|top                                |sd_bmp_hdmi                                |555    |1073   |231    |
 |  u_clk_wiz_0                      |PLL                                        |0      |0      |1      |
 |  u_clk_wiz_1                      |PLL_hdmi                                   |0      |0      |1      |
 |  u_ddr3_top                       |ddr3_top1                                  |172    |369    |54     |
@@ -49,15 +49,11 @@ Report Hierarchy Area:
 |        ram_inst                   |ram_infer_SOFTFIFO                         |0      |16     |1      |
 |        rd_to_wr_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
 |        wr_to_rd_cross_inst        |fifo_cross_domain_addr_process_al_SOFTFIFO |18     |40     |0      |
-|  u_hdmi_top                       |hdmi_top1                                  |343    |1509   |321    |
-|    debayer_h                      |isp_demosaic                               |207    |1297   |219    |
-|      linebuffer                   |shift_register                             |0      |19     |9      |
+|  u_hdmi_top                       |hdmi_top1                                  |143    |343    |114    |
+|    debayer_l                      |isp_demosaic_l                             |7      |131    |12     |
+|      linebuffer                   |shift_register                             |0      |19     |5      |
 |        gen_ram_inst[0]$u_ram      |simple_dp_ram                              |0      |0      |1      |
 |        gen_ram_inst[1]$u_ram      |simple_dp_ram                              |0      |0      |1      |
-|        gen_ram_inst[2]$u_ram      |simple_dp_ram                              |0      |0      |1      |
-|        gen_ram_inst[3]$u_ram      |simple_dp_ram                              |0      |0      |1      |
-|        gen_ram_inst[4]$u_ram      |simple_dp_ram                              |0      |0      |1      |
-|        gen_ram_inst[5]$u_ram      |simple_dp_ram                              |0      |0      |1      |
 |    u3_hdmi_tx                     |hdmi_tx                                    |131    |187    |91     |
 |      Inst_DVITransmitter          |DVITransmitter                             |131    |187    |91     |
 |        Inst_TMDSEncoder_blue      |TMDSEncoder                                |47     |48     |29     |

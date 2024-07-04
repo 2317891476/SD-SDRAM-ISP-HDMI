@@ -1,4 +1,4 @@
-module isp_demosaic2
+module isp_demosaic_m
 #(
 	parameter BITS = 8,
 	parameter WIDTH = 1280,
@@ -12,7 +12,9 @@ module isp_demosaic2
 	input in_href,
 	input in_vsync,
 	input [BITS-1:0] in_raw,
+    input in_de,
 
+    output out_de,
 	output out_href,
 	output out_vsync,
 	output [BITS-1:0] out_r,
@@ -229,22 +231,26 @@ module isp_demosaic2
 		end
 	end
 
-	localparam DLY_CLK = 7;
+	localparam DLY_CLK = 2;
 	reg [DLY_CLK-1:0] href_dly;
 	reg [DLY_CLK-1:0] vsync_dly;
+    reg [DLY_CLK-1:0] de_dly;
 	always @ (posedge pclk or negedge rst_n) begin
 		if (!rst_n) begin
 			href_dly <= 0;
 			vsync_dly <= 0;
+            de_dly <=0;
 		end
 		else begin
 			href_dly <= {href_dly[DLY_CLK-2:0], in_href};
 			vsync_dly <= {vsync_dly[DLY_CLK-2:0], in_vsync};
+            de_dly <= {de_dly[DLY_CLK-2:0],in_de};
 		end
 	end
 	
 	assign out_href = href_dly[DLY_CLK-1];
 	assign out_vsync = vsync_dly[DLY_CLK-1];
+    assign out_de = de_dly[DLY_CLK-1];
 	assign out_r = out_href ? r_now : {BITS{1'b0}};
 	assign out_g = out_href ? g_now : {BITS{1'b0}};
 	assign out_b = out_href ? b_now : {BITS{1'b0}};
