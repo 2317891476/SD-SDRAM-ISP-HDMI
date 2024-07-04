@@ -8,17 +8,17 @@ IO Statistics
   #inout                    0
 
 Utilization Statistics
-#lut                     3415   out of  19600   17.42%
-#reg                     2549   out of  19600   13.01%
-#le                      4303
-  #lut only              1754   out of   4303   40.76%
-  #reg only               888   out of   4303   20.64%
-  #lut&reg               1661   out of   4303   38.60%
+#lut                     1825   out of  19600    9.31%
+#reg                     1255   out of  19600    6.40%
+#le                      2175
+  #lut only               920   out of   2175   42.30%
+  #reg only               350   out of   2175   16.09%
+  #lut&reg                905   out of   2175   41.61%
 #dsp                        0   out of     29    0.00%
-#bram                       9   out of     64   14.06%
-  #bram9k                   9
+#bram                       6   out of     64    9.38%
+  #bram9k                   6
   #fifo9k                   0
-#bram32k                    8   out of     16   50.00%
+#bram32k                    2   out of     16   12.50%
 #pad                       16   out of    188    8.51%
   #ireg                     0
   #oreg                     4
@@ -28,13 +28,13 @@ Utilization Statistics
 
 Clock Resource Statistics
 Index     ClockNet                                    Type               DriverType         Driver                                          Fanout
-#1        u_hdmi_top/bnr/pclk                         GCLK               pll                u_clk_wiz_1/pll_inst.clkc1                      789
-#2        u_clk_wiz_0/clk0_buf                        GCLK               pll                u_clk_wiz_0/pll_inst.clkc0                      168
-#3        config_inst_syn_9                           GCLK               config             config_inst.jtck                                155
-#4        u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/clkw    GCLK               pll                u_clk_wiz_0/pll_inst.clkc3                      152
-#5        sys_clk_dup_1                               GCLK               io                 sys_clk_syn_2.di                                83
-#6        u_sd_ctrl_top/u_sd_init/div_clk             GCLK               lslice             u_sd_ctrl_top/u_sd_init/div_clk_reg_syn_9.q0    62
-#7        u_clk_wiz_1/clk0_buf                        GCLK               pll                u_clk_wiz_1/pll_inst.clkc0                      35
+#1        u_clk_wiz_0/clk0_buf                        GCLK               pll                u_clk_wiz_0/pll_inst.clkc0                      172
+#2        u_ddr3_top/u_sdram_fifo_ctrl/wrfifo/clkw    GCLK               pll                u_clk_wiz_0/pll_inst.clkc3                      155
+#3        u_hdmi_top/bnr/pclk                         GCLK               pll                u_clk_wiz_1/pll_inst.clkc1                      139
+#4        config_inst_syn_9                           GCLK               config             config_inst.jtck                                113
+#5        sys_clk_dup_1                               GCLK               io                 sys_clk_syn_2.di                                66
+#6        u_sd_ctrl_top/u_sd_init/div_clk             GCLK               lslice             u_sd_ctrl_top/u_sd_init/div_clk_reg_syn_9.q0    64
+#7        u_clk_wiz_1/clk0_buf                        GCLK               pll                u_clk_wiz_1/pll_inst.clkc0                      36
 #8        u_sd_ctrl_top/u_sd_read/clk_ref_180deg      GCLK               pll                u_clk_wiz_0/pll_inst.clkc4                      24
 #9        u_ddr3_top/clk_sdram                        GCLK               pll                u_clk_wiz_0/pll_inst.clkc1                      0
 
@@ -118,78 +118,64 @@ Report Hierarchy Area:
 +-------------------------------------------------------------------------------------------------------------------------------------+
 |Instance                            |Module                                     |le     |lut     |ripple  |seq     |bram    |dsp     |
 +-------------------------------------------------------------------------------------------------------------------------------------+
-|top                                 |sd_bmp_hdmi                                |4303   |2579    |836     |2553    |17      |0       |
+|top                                 |sd_bmp_hdmi                                |2175   |1448    |377     |1259    |8       |0       |
 |  u_clk_wiz_0                       |PLL                                        |0      |0       |0       |0       |0       |0       |
 |  u_clk_wiz_1                       |PLL_hdmi                                   |0      |0       |0       |0       |0       |0       |
-|  u_ddr3_top                        |ddr3_top1                                  |575    |321     |100     |368     |2       |0       |
+|  u_ddr3_top                        |ddr3_top1                                  |590    |354     |100     |347     |2       |0       |
 |    physica_sdram                   |SDRAM                                      |0      |0       |0       |0       |0       |0       |
-|    u_sdram_controller              |sdram_controller                           |200    |138     |40      |95      |0       |0       |
-|      u_sdram_cmd                   |sdram_cmd                                  |36     |36      |0       |19      |0       |0       |
-|      u_sdram_ctrl                  |sdram_ctrl                                 |148    |102     |40      |60      |0       |0       |
-|      u_sdram_data                  |sdram_data                                 |16     |0       |0       |16      |0       |0       |
-|    u_sdram_fifo_ctrl               |sdram_fifo_ctrl                            |375    |183     |60      |273     |2       |0       |
-|      rdfifo                        |SOFTFIFO                                   |147    |62      |18      |120     |1       |0       |
+|    u_sdram_controller              |sdram_controller                           |226    |174     |40      |85      |0       |0       |
+|      u_sdram_cmd                   |sdram_cmd                                  |51     |51      |0       |16      |0       |0       |
+|      u_sdram_ctrl                  |sdram_ctrl                                 |160    |116     |40      |54      |0       |0       |
+|      u_sdram_data                  |sdram_data                                 |15     |7       |0       |15      |0       |0       |
+|    u_sdram_fifo_ctrl               |sdram_fifo_ctrl                            |364    |180     |60      |262     |2       |0       |
+|      rdfifo                        |SOFTFIFO                                   |137    |68      |18      |110     |1       |0       |
+|        ram_inst                    |ram_infer_SOFTFIFO                         |6      |6       |0       |6       |1       |0       |
+|        rd_to_wr_cross_inst         |fifo_cross_domain_addr_process_al_SOFTFIFO |34     |17      |0       |34      |0       |0       |
+|        wr_to_rd_cross_inst         |fifo_cross_domain_addr_process_al_SOFTFIFO |38     |24      |0       |38      |0       |0       |
+|      wrfifo                        |SOFTFIFO                                   |148    |60      |18      |121     |1       |0       |
 |        ram_inst                    |ram_infer_SOFTFIFO                         |16     |0       |0       |16      |1       |0       |
-|        rd_to_wr_cross_inst         |fifo_cross_domain_addr_process_al_SOFTFIFO |40     |20      |0       |40      |0       |0       |
-|        wr_to_rd_cross_inst         |fifo_cross_domain_addr_process_al_SOFTFIFO |40     |21      |0       |40      |0       |0       |
-|      wrfifo                        |SOFTFIFO                                   |144    |61      |18      |118     |1       |0       |
-|        ram_inst                    |ram_infer_SOFTFIFO                         |16     |0       |0       |16      |1       |0       |
-|        rd_to_wr_cross_inst         |fifo_cross_domain_addr_process_al_SOFTFIFO |39     |17      |0       |39      |0       |0       |
-|        wr_to_rd_cross_inst         |fifo_cross_domain_addr_process_al_SOFTFIFO |36     |23      |0       |36      |0       |0       |
-|  u_hdmi_top                        |hdmi_top1                                  |2487   |1438    |520     |1402    |6       |0       |
-|    bnr                             |isp_bnr                                    |156    |75      |16      |116     |2       |0       |
-|      linebuffer                    |shift_register                             |63     |45      |16      |23      |2       |0       |
-|        gen_ram_inst[0]$u_ram       |simple_dp_ram                              |0      |0       |0       |0       |1       |0       |
-|        gen_ram_inst[1]$u_ram       |simple_dp_ram                              |0      |0       |0       |0       |1       |0       |
-|        gen_ram_inst[3]$u_ram       |simple_dp_ram                              |9      |9       |0       |1       |0       |0       |
-|    dpc                             |isp_dpc                                    |1877   |1037    |407     |1103    |4       |0       |
-|      linebuffer                    |shift_register                             |67     |35      |16      |27      |4       |0       |
-|        gen_ram_inst[0]$u_ram       |simple_dp_ram                              |0      |0       |0       |0       |1       |0       |
-|        gen_ram_inst[1]$u_ram       |simple_dp_ram                              |0      |0       |0       |0       |1       |0       |
-|        gen_ram_inst[2]$u_ram       |simple_dp_ram                              |0      |0       |0       |0       |1       |0       |
-|        gen_ram_inst[3]$u_ram       |simple_dp_ram                              |9      |9       |0       |1       |1       |0       |
-|    u3_hdmi_tx                      |hdmi_tx                                    |305    |238     |36      |154     |0       |0       |
-|      Inst_DVITransmitter           |DVITransmitter                             |305    |238     |36      |154     |0       |0       |
-|        Inst_TMDSEncoder_blue       |TMDSEncoder                                |91     |71      |12      |36      |0       |0       |
-|        Inst_TMDSEncoder_green      |TMDSEncoder                                |79     |67      |12      |31      |0       |0       |
-|        Inst_TMDSEncoder_red        |TMDSEncoder                                |83     |67      |12      |36      |0       |0       |
-|        Inst_blue_serializer_10_1   |Serial_N_1_lvds_dat                        |22     |16      |0       |21      |0       |0       |
-|        Inst_clk_serializer_10_1    |Serial_N_1_lvds                            |6      |2       |0       |6       |0       |0       |
-|        Inst_green_serializer_10_1  |Serial_N_1_lvds_dat                        |13     |9       |0       |13      |0       |0       |
-|        Inst_red_serializer_10_1    |Serial_N_1_lvds_dat                        |11     |6       |0       |11      |0       |0       |
-|    u_video_driver                  |video_driver                               |149    |88      |61      |29      |0       |0       |
-|  u_sd_ctrl_top                     |sd_ctrl_top                                |347    |251     |45      |217     |0       |0       |
-|    u_sd_init                       |sd_init                                    |209    |152     |30      |111     |0       |0       |
-|    u_sd_read                       |sd_read                                    |138    |99      |15      |106     |0       |0       |
-|  u_sd_read_photo                   |read_rawdata                               |309    |232     |72      |164     |0       |0       |
-|  cw_top                            |CW_TOP_WRAPPER                             |582    |334     |99      |397     |0       |0       |
-|    wrapper_cwc_top                 |cwc_top                                    |582    |334     |99      |397     |0       |0       |
-|      cfg_int_inst                  |cwc_cfg_int                                |267    |137     |0       |262     |0       |0       |
-|        reg_inst                    |register                                   |265    |135     |0       |260     |0       |0       |
+|        rd_to_wr_cross_inst         |fifo_cross_domain_addr_process_al_SOFTFIFO |39     |20      |0       |39      |0       |0       |
+|        wr_to_rd_cross_inst         |fifo_cross_domain_addr_process_al_SOFTFIFO |34     |20      |0       |34      |0       |0       |
+|  u_hdmi_top                        |hdmi_top1                                  |535    |394     |115     |236     |0       |0       |
+|    trans                           |bayer_to_rgb888                            |24     |24      |0       |24      |0       |0       |
+|    u3_hdmi_tx                      |hdmi_tx                                    |360    |280     |54      |186     |0       |0       |
+|      Inst_DVITransmitter           |DVITransmitter                             |360    |280     |54      |186     |0       |0       |
+|        Inst_TMDSEncoder_blue       |TMDSEncoder                                |109    |87      |18      |46      |0       |0       |
+|        Inst_TMDSEncoder_green      |TMDSEncoder                                |99     |81      |18      |42      |0       |0       |
+|        Inst_TMDSEncoder_red        |TMDSEncoder                                |101    |83      |18      |47      |0       |0       |
+|        Inst_blue_serializer_10_1   |Serial_N_1_lvds_dat                        |19     |11      |0       |19      |0       |0       |
+|        Inst_clk_serializer_10_1    |Serial_N_1_lvds                            |7      |2       |0       |7       |0       |0       |
+|        Inst_green_serializer_10_1  |Serial_N_1_lvds_dat                        |11     |6       |0       |11      |0       |0       |
+|        Inst_red_serializer_10_1    |Serial_N_1_lvds_dat                        |14     |10      |0       |14      |0       |0       |
+|    u_video_driver                  |video_driver                               |151    |90      |61      |26      |0       |0       |
+|  u_sd_ctrl_top                     |sd_ctrl_top                                |364    |259     |45      |215     |0       |0       |
+|    u_sd_init                       |sd_init                                    |214    |149     |30      |111     |0       |0       |
+|    u_sd_read                       |sd_read                                    |150    |110     |15      |104     |0       |0       |
+|  u_sd_read_photo                   |read_rawdata                               |218    |174     |32      |149     |0       |0       |
+|  cw_top                            |CW_TOP_WRAPPER                             |462    |261     |85      |307     |0       |0       |
+|    wrapper_cwc_top                 |cwc_top                                    |462    |261     |85      |307     |0       |0       |
+|      cfg_int_inst                  |cwc_cfg_int                                |192    |83      |0       |192     |0       |0       |
+|        reg_inst                    |register                                   |190    |81      |0       |190     |0       |0       |
 |        tap_inst                    |tap                                        |2      |2       |0       |2       |0       |0       |
-|      trigger_inst                  |trigger                                    |315    |197     |99      |135     |0       |0       |
-|        bus_inst                    |bus_top                                    |123    |74      |42      |47      |0       |0       |
-|          BUS_DETECTOR[0]$bus_nodes |bus_det                                    |3      |2       |0       |3       |0       |0       |
-|          BUS_DETECTOR[1]$bus_nodes |bus_det                                    |2      |2       |0       |2       |0       |0       |
+|      trigger_inst                  |trigger                                    |270    |178     |85      |115     |0       |0       |
+|        bus_inst                    |bus_top                                    |69     |41      |24      |27      |0       |0       |
+|          BUS_DETECTOR[0]$bus_nodes |bus_det                                    |1      |0       |0       |1       |0       |0       |
 |          BUS_DETECTOR[2]$bus_nodes |bus_det                                    |2      |2       |0       |2       |0       |0       |
-|          BUS_DETECTOR[3]$bus_nodes |bus_det                                    |2      |2       |0       |2       |0       |0       |
-|          BUS_DETECTOR[4]$bus_nodes |bus_det                                    |53     |31      |18      |21      |0       |0       |
-|          BUS_DETECTOR[5]$bus_nodes |bus_det                                    |47     |27      |18      |15      |0       |0       |
-|          BUS_DETECTOR[6]$bus_nodes |bus_det                                    |14     |8       |6       |2       |0       |0       |
-|        emb_ctrl_inst               |emb_ctrl                                   |106    |77      |29      |54      |0       |0       |
+|          BUS_DETECTOR[4]$bus_nodes |bus_det                                    |52     |32      |18      |18      |0       |0       |
+|          BUS_DETECTOR[5]$bus_nodes |bus_det                                    |14     |7       |6       |6       |0       |0       |
+|        emb_ctrl_inst               |emb_ctrl                                   |110    |81      |29      |53      |0       |0       |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
 
 DataNet Average Fanout:
 
    Index     Fanout     Nets  
-    #1          1       3068  
-    #2          2       901   
-    #3          3       392   
-    #4          4       191   
-    #5        5-10      400   
-    #6        11-50     121   
-    #7       51-100      5    
-    #8       101-500     2    
-    #9        >500       1    
-  Average     2.58            
+    #1          1       1628  
+    #2          2       461   
+    #3          3       288   
+    #4          4       103   
+    #5        5-10      172   
+    #6        11-50      74   
+    #7       51-100      2    
+    #8       101-500     3    
+  Average     2.47            
