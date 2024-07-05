@@ -46,9 +46,9 @@ module bayer_to_rgb888(
         end
         else begin
             case({odd_pix_sync_shift,odd_line_sync_shift})
-                2'b01:rgb888 <={16'b0,{bayer_data[12:4]}};//蓝色
-                2'b10:rgb888 <={{bayer_data[12:4]},16'b0};//红色
-                default:rgb888 <={8'b0,{bayer_data[12:4]},8'b0};//绿色
+                2'b10:rgb888 <={16'b0,{bayer_data[15:7]}};//蓝色
+                2'b01:rgb888 <={{bayer_data[15:7]},16'b0};//红色
+                default:rgb888 <={8'b0,{bayer_data[15:7]},8'b0};//绿色
             endcase
         end 
     end

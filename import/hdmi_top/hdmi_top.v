@@ -136,7 +136,7 @@ wire [23:0] bayer_rgb888_in,bayer_rgb888_out;
 
 bayer_to_rgb888 trans(
     .pclk(pixel_clk),
-    .rst(sys_rst_n),
+    .rst_n(sys_rst_n),
     .bayer_data(bayer_rgb888_in),
     .in_href(video_hs),
     .in_vsync(video_vs),
@@ -147,6 +147,7 @@ bayer_to_rgb888 trans(
 isp_debayer_h#(
 	.WIDTH(WIDTH),
     .HEIGHT(HEIGHT),
+    .BITS(12),
 	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
 )
 debayer_h
@@ -155,12 +156,12 @@ debayer_h
          .rst_n(sys_rst_n),
          .in_href(video_hs),
          .in_vsync(video_vs),
-         .in_raw(debayer_h_in[15:8]),
+         .in_raw(debayer_h_in[15:4]),
          .in_de(video_de),
 
-         .out_de(out_de),
-         .out_href(out_href),
-         .out_vsync(out_vsync),
+         .out_de(),
+         .out_href(),
+         .out_vsync(),
          .out_r(debayer_h_out[23:16]),
          .out_g(debayer_h_out[15:8]),
          .out_b(debayer_h_out[7:0])
@@ -169,6 +170,7 @@ debayer_h
 isp_debayer_m#(
 	.WIDTH(WIDTH),
     .HEIGHT(HEIGHT),
+    .BITS(12),
 	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
 )
 debayer_m
@@ -177,12 +179,12 @@ debayer_m
          .rst_n(sys_rst_n),
          .in_href(video_hs),
          .in_vsync(video_vs),
-         .in_raw(debayer_m_in[15:8]),
+         .in_raw(debayer_m_in[15:4]),
          .in_de(video_de),
 
-         .out_de(out_de),
-         .out_href(out_href),
-         .out_vsync(out_vsync),
+         .out_de(),
+         .out_href(),
+         .out_vsync(),
          .out_r(debayer_m_out[23:16]),
          .out_g(debayer_m_out[15:8]),
          .out_b(debayer_m_out[7:0])
@@ -192,6 +194,7 @@ debayer_m
 isp_debayer_l#(
 	.WIDTH(WIDTH),
     .HEIGHT(HEIGHT),
+    .BITS(12),
 	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
 )
 debayer_l
@@ -200,12 +203,12 @@ debayer_l
          .rst_n(sys_rst_n),
          .in_href(video_hs),
          .in_vsync(video_vs),
-         .in_raw(debayer_l_in[15:8]),
+         .in_raw(debayer_l_in[15:4]),
          .in_de(video_de),
 
-         .out_de(out_de),
-         .out_href(out_href),
-         .out_vsync(out_vsync),
+         .out_de(),
+         .out_href(),
+         .out_vsync(),
          .out_r(debayer_l_out[23:16]),
          .out_g(debayer_l_out[15:8]),
          .out_b(debayer_l_out[7:0])
@@ -227,9 +230,9 @@ awb
          .in_b(awb_in[7:0]),
          .in_de(video_de),
 
-         .out_de(out_de2),
-         .out_href(out_href2),
-         .out_vsync(out_vsync2),
+         .out_de(),
+         .out_href(),
+         .out_vsync(),
          .out_r(awb_out[23:16]),
          .out_g(awb_out[15:8]),
          .out_b(awb_out[7:0])
@@ -240,9 +243,9 @@ ISP_interconnect isp_interconnect
     .clk(pixel_clk),
     .rst_n(sys_rst_n),
 
-    .mode(mode),
+    .mode(ISP_mode),
 
-    .bayer_data(bayer_data),
+    .bayer_data(video_rgb_565),
 
     .dpc_out(dpc_out),
     .awb_out(awb_out),

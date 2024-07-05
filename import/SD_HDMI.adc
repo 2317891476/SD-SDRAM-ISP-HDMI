@@ -11,3 +11,7 @@ set_pin_assignment { sd_cs } { LOCATION = F13; IOSTANDARD = LVCMOS33; }
 set_pin_assignment { sd_mosi  } { LOCATION = F14; IOSTANDARD = LVCMOS33; }
 set_pin_assignment { sd_miso } { LOCATION = D14; IOSTANDARD = LVCMOS33; }
 
+set_pin_assignment	{ ISP_mode[0]}	{ LOCATION = A10; IOSTANDARD = LVCMOS33; }
+set_pin_assignment	{ ISP_mode[1]}	{ LOCATION = B10; IOSTANDARD = LVCMOS33; }
+set_pin_assignment	{ ISP_mode[2]}	{ LOCATION = A11; IOSTANDARD = LVCMOS33; }
+set_pin_assignment	{ ISP_mode[3]}	{ LOCATION = A12; IOSTANDARD = LVCMOS33; }

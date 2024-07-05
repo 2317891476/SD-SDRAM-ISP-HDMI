@@ -113,9 +113,9 @@ module isp_debayer_l
 	assign out_href = href_dly[DLY_CLK-1];
 	assign out_vsync = vsync_dly[DLY_CLK-1];
     assign out_de = de_dly[DLY_CLK-1];
-	assign out_r = out_href ? r_now : {BITS{1'b0}};
-	assign out_g = out_href ? g_now : {BITS{1'b0}};
-	assign out_b = out_href ? b_now : {BITS{1'b0}};
+	assign out_r = out_href ? r_now[BITS-1:BITS-8] : {BITS{1'b0}};
+	assign out_g = out_href ? g_now[BITS-1:BITS-8] : {BITS{1'b0}};
+	assign out_b = out_href ? b_now[BITS-1:BITS-8] : {BITS{1'b0}};
 
 	function [BITS-1:0] raw2r;
 		input [1:0] format;//0:R 1:Gr 2:Gb 3:B

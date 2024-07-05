@@ -1,0 +1,13 @@
+============================================================
+   Tang Dynasty, V5.6.71036
+      Copyright (c) 2012-2023 Anlogic Inc.
+   Executable = F:/ARMChina/bin/td.exe
+   Built at =   20:34:38 Mar 21 2023
+   Run by =     Illyasvial Von Einzb
+   Run Date =   Fri Jul  5 19:10:42 2024
+
+   Run on =     LAPTOP-4S5LNBPI
+============================================================
+RUN-1001 : reset_run syn_1 phy_1.
+RUN-1001 : launch_runs syn_1 phy_1  -jobs 6.
+RUN-6001 WARNING: syn_1: run failed.
