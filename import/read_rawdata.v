@@ -1,7 +1,7 @@
 module read_rawdata(
     input                clk           ,  //时钟信号
     input                rst_n         ,  //复位信号,低电平有效
-    input        [1:0]   switch_video  ,
+    //input        [1:0]   switch_video  ,
     input        [20:0]  ddr_max_addr  ,  //DDR读写最大地址  
     input        [25:0]  sd_sec_num    ,  //SD卡读扇区个数
     input                rd_busy       ,  //SD卡读忙信号
@@ -94,12 +94,7 @@ always @(posedge clk or negedge rst_n) begin
                 //开始读取SD卡数据
                 rd_flow_cnt <= rd_flow_cnt + 2'd1;
                 rd_start_en <= 1'b1;
-                case (switch_video)
-                    2'b01:
-                        rd_sec_addr <= PHOTO_SECTION_ADDR1;
-                    default:
-                        rd_sec_addr <= PHOTO_SECTION_ADDR0;
-                endcase
+                rd_sec_addr <= PHOTO_SECTION_ADDR0;
             end
             2'd1 : begin
                 //读忙信号的下降沿代表读完一个扇区,开始读取下一扇区地址数据
@@ -178,30 +173,30 @@ always @(posedge clk or negedge rst_n) begin
                     if (row_state == row_G) begin
                         if(pixel_state==G) begin 
                             pixel_state<= B;
-                            case (switch_video)
-                                2'b0:
-                                    ddr_wr_datar <= {5'b0,sd_rd_val_data[15:10],5'b0};
-                                2'b10:
-                                    ddr_wr_datar <= {5'b0,sd_rd_val_data[9:4],5'b0};
-                                2'b01:
-                                    ddr_wr_datar <= sd_rd_val_data;
-                                default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
-                            endcase
+                            // case (switch_video)
+                            //     2'b0:
+                            //         ddr_wr_datar <= {5'b0,sd_rd_val_data[15:10],5'b0};
+                            //     2'b10:
+                            //         ddr_wr_datar <= {5'b0,sd_rd_val_data[9:4],5'b0};
+                            //     2'b01:
+                            ddr_wr_datar <= sd_rd_val_data;
+                            //     default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
+                            // endcase
                             ddr_wr_en <= 1'b1;
                         end
                         //Bas'
                          
                         else begin
                             pixel_state <=G;
-                            case (switch_video)
-                                2'b0:
-                                    ddr_wr_datar <= {5'b0,6'b0,sd_rd_val_data[15:11]};
-                                2'b10:
-                                    ddr_wr_datar <= {5'b0,6'b0,sd_rd_val_data[8:4]};
-                                2'b01:
-                                    ddr_wr_datar <= sd_rd_val_data;
-                                default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
-                            endcase
+                            // case (switch_video)
+                            //     2'b0:
+                            //         ddr_wr_datar <= {5'b0,6'b0,sd_rd_val_data[15:11]};
+                            //     2'b10:
+                            //         ddr_wr_datar <= {5'b0,6'b0,sd_rd_val_data[8:4]};
+                            //     2'b01:
+                            ddr_wr_datar <= sd_rd_val_data;
+                            //     default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
+                            // endcase
                             ddr_wr_en <= 1'b1;
                         end
                     end
@@ -209,29 +204,29 @@ always @(posedge clk or negedge rst_n) begin
                     else begin
                         if (pixel_state == R) begin
                             pixel_state<= G;
-                            case (switch_video)
-                                2'b0:
-                                    ddr_wr_datar <= {sd_rd_val_data[15:11],6'b0,5'b0};
-                                2'b10:
-                                    ddr_wr_datar <= {sd_rd_val_data[8:4],6'b0,5'b0};
-                                2'b01:
-                                    ddr_wr_datar <= sd_rd_val_data;
-                                default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
-                            endcase
+                            // case (switch_video)
+                            //     2'b0:
+                            //         ddr_wr_datar <= {sd_rd_val_data[15:11],6'b0,5'b0};
+                            //     2'b10:
+                            //         ddr_wr_datar <= {sd_rd_val_data[8:4],6'b0,5'b0};
+                            //     2'b01:
+                            ddr_wr_datar <= sd_rd_val_data;
+                            //     default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
+                            // endcase
                             ddr_wr_en <= 1'b1;
                         end
                         //G
                         else begin
                             pixel_state<= R;
-                            case (switch_video)
-                                2'b0:
-                                    ddr_wr_datar <= {5'b0,sd_rd_val_data[15:10],5'b0};
-                                2'b10:
-                                    ddr_wr_datar <= {5'b0,sd_rd_val_data[9:4],5'b0};
-                                2'b01:
-                                    ddr_wr_datar <= sd_rd_val_data;
-                                default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
-                            endcase
+                            // case (switch_video)
+                            //     2'b0:
+                            //         ddr_wr_datar <= {5'b0,sd_rd_val_data[15:10],5'b0};
+                            //     2'b10:
+                            //         ddr_wr_datar <= {5'b0,sd_rd_val_data[9:4],5'b0};
+                            //     2'b01:
+                            ddr_wr_datar <= sd_rd_val_data;
+                            //     default:ddr_wr_datar <= {4'b0,sd_rd_val_data[15:4]};
+                            // endcase
                             ddr_wr_en <= 1'b1;
                         end
                     end

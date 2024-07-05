@@ -25,14 +25,14 @@ module alg_awb
 	output reg [7:0] b_gain
 );
 
-`define AWB_USE_SHIFT_DIV 1
+// `define AWB_USE_SHIFT_DIV 0
 
 	always @ (*) g_gain = 8'h10;
 
-`ifdef AWB_USE_SHIFT_DIV
+// `ifdef AWB_USE_SHIFT_DIV
 	wire [31:0] r_gain0, r_remain;
 	wire r_div_done;
-	shift_div #(32) div_rgain(pclk, rst_n, stat_done, sum_g, {4'd0,sum_r[31:4]}, r_gain0, r_remain, r_div_done);
+	shift_div #(32) div_rgain(pclk, rst_n, stat_done, sum_g, {sum_r[31:0]}, r_gain0, r_remain, r_div_done);
 	always @ (posedge pclk or negedge rst_n) begin
 		if (!rst_n) begin
 			r_gain <= 8'h10;
@@ -47,7 +47,7 @@ module alg_awb
 	
 	wire [31:0] b_gain0, b_remain;
 	wire b_div_done;
-	shift_div #(32) div_bgain(pclk, rst_n, stat_done, sum_g, {4'd0,sum_b[31:4]}, b_gain0, b_remain, b_div_done);
+	shift_div #(32) div_bgain(pclk, rst_n, stat_done, sum_g, {sum_r[31:0]}, b_gain0, b_remain, b_div_done);
 	always @ (posedge pclk or negedge rst_n) begin
 		if (!rst_n) begin
 			b_gain <= 8'h10;
@@ -59,21 +59,21 @@ module alg_awb
 			b_gain <= b_gain;
 		end
 	end
-`else
+// `else
 
-	always @ (posedge pclk or negedge rst_n) begin
-		if (!rst_n) begin
-			r_gain <= 8'h10;
-			b_gain <= 8'h10;
-		end
-		else if (stat_done) begin
-			r_gain <= sum_g / sum_r[31:4];
-			b_gain <= sum_g / sum_b[31:4];
-		end
-		else begin
-			r_gain <= r_gain;
-			b_gain <= b_gain;
-		end
-	end
-`endif
+	// always @ (posedge pclk or negedge rst_n) begin
+	// 	if (!rst_n) begin
+	// 		r_gain <= 8'h10;
+	// 		b_gain <= 8'h10;
+	// 	end
+	// 	else if (stat_done) begin
+	// 		r_gain <= sum_g / sum_r[31:0];
+	// 		b_gain <= sum_g / sum_b[31:0];
+	// 	end
+	// 	else begin
+	// 		r_gain <= r_gain;
+	// 		b_gain <= b_gain;
+	// 	end
+	// end
+// `endif
 endmodule

@@ -45,8 +45,9 @@ module sd_bmp_hdmi(
     //output  [0:0]         ddr3_cs_n    ,  //DDR3 片选
     //output  [3:0]         ddr3_dm      ,  //DDR3_dm
     //	output  [0:0]         ddr3_odt     ,  //DDR3_odt
-    input 			[1:0]	switch_video,									                            
+    //input 			[1:0]	switch_video,									                            
     //hdmi接口                             
+    input [3:0] ISP_mode,
     output                tmds_clk_p   ,  // TMDS 时钟通道
     //	output                tmds_clk_n   ,
     output  [2:0]         tmds_data_p    // TMDS 数据通道
@@ -119,7 +120,7 @@ assign  wr_data = ddr_wr_data;
 //读取SD卡图片
 read_rawdata u_sd_read_photo(
     .clk                      (clk_sd),
-    .switch_video       (switch_video),
+    //.switch_video       (switch_video),
     //系统初始化完成之后,再开始从SD卡中读取图片
     .rst_n                    (rst_n & sys_init_done), 
     .ddr_max_addr             (DDR_MAX_ADDR),       
@@ -242,6 +243,7 @@ hdmi_top1 u_hdmi_top(
     .tmds_data_p              (tmds_data_p  ),   // TMDS 数据通道
     //.tmds_data_n              (tmds_data_n  ),
     //用户接口                
+    .ISP_mode (ISP_mode),
     .video_vs                 (rd_vsync     ),   //HDMI场信号  
     .pixel_xpos               (),
     .pixel_ypos               (),      

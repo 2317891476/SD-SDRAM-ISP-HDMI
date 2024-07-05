@@ -140,5 +140,4 @@ module isp_stat_awb
 	assign out_sum_r = pix_sum_r;
 	assign out_sum_g = pix_sum_g;
 	assign out_sum_b = pix_sum_b;
-
 endmodule

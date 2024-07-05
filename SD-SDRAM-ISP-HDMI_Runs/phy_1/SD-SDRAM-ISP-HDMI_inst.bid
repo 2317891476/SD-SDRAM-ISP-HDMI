@@ -1,135 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- HMAC is: c720ae8bd701bf4c63a15b5da3ebad0954e01a54b9d1f30bf491f968279277a2 -->
+<!-- HMAC is: 74a58b26ffee9ac0697db9435fa48f992105298fccbd6e877ca15d478def5cf3 -->
 <All_Bram_Infos>
-    <Ucode>10110011</Ucode>
+    <Ucode>00111101</Ucode>
     <AL_PHY_BRAM>
         <INST_1>
-            <rid>0X0004</rid>
-            <wid>0X0004</wid>
-            <is_debuggable>n</is_debuggable>
-            <is_initialize>y</is_initialize>
-            <model_type>AL_PHY_BRAM</model_type>
-            <name>u_hdmi_top/debayer_l/linebuffer/gen_ram_inst[0]$u_ram/ramread0_syn_9</name>
-            <width_a>4</width_a>
-            <width_b>4</width_b>
-            <logic_name>u_hdmi_top/debayer_l/linebuffer/gen_ram_inst[0]$u_ram/ramread0_syn_8</logic_name>
-            <logic_width>8</logic_width>
-            <logic_depth>2048</logic_depth>
-            <sub_bid_info>
-                <address_offset>0</address_offset>
-                <data_offset>0</data_offset>
-                <depth>2048</depth>
-                <width>4</width>
-                <num_section>1</num_section>
-                <section_size>8</section_size>
-                <width_per_section>4</width_per_section>
-                <bytes_in_per_section>1</bytes_in_per_section>
-                <working_mode>
-                    <address_step>1</address_step>
-                    <depth>2048</depth>
-                    <mode_type>126</mode_type>
-                    <width>4</width>
-                    <num_byte>1</num_byte>
-                    <ecc>0</ecc>
-                </working_mode>
-            </sub_bid_info>
-        </INST_1>
-        <INST_2>
-            <rid>0X0005</rid>
-            <wid>0X0005</wid>
-            <is_debuggable>n</is_debuggable>
-            <is_initialize>y</is_initialize>
-            <model_type>AL_PHY_BRAM</model_type>
-            <name>u_hdmi_top/debayer_l/linebuffer/gen_ram_inst[0]$u_ram/ramread0_syn_14</name>
-            <width_a>4</width_a>
-            <width_b>4</width_b>
-            <logic_name>u_hdmi_top/debayer_l/linebuffer/gen_ram_inst[0]$u_ram/ramread0_syn_8</logic_name>
-            <logic_width>8</logic_width>
-            <logic_depth>2048</logic_depth>
-            <sub_bid_info>
-                <address_offset>0</address_offset>
-                <data_offset>4</data_offset>
-                <depth>2048</depth>
-                <width>4</width>
-                <num_section>1</num_section>
-                <section_size>8</section_size>
-                <width_per_section>4</width_per_section>
-                <bytes_in_per_section>1</bytes_in_per_section>
-                <working_mode>
-                    <address_step>1</address_step>
-                    <depth>2048</depth>
-                    <mode_type>126</mode_type>
-                    <width>4</width>
-                    <num_byte>1</num_byte>
-                    <ecc>0</ecc>
-                </working_mode>
-            </sub_bid_info>
-        </INST_2>
-        <INST_3>
-            <rid>0X0006</rid>
-            <wid>0X0006</wid>
-            <is_debuggable>n</is_debuggable>
-            <is_initialize>y</is_initialize>
-            <model_type>AL_PHY_BRAM</model_type>
-            <name>u_hdmi_top/debayer_l/linebuffer/gen_ram_inst[1]$u_ram/ramread0_syn_9</name>
-            <width_a>4</width_a>
-            <width_b>4</width_b>
-            <logic_name>u_hdmi_top/debayer_l/linebuffer/gen_ram_inst[1]$u_ram/ramread0_syn_8</logic_name>
-            <logic_width>8</logic_width>
-            <logic_depth>2048</logic_depth>
-            <sub_bid_info>
-                <address_offset>0</address_offset>
-                <data_offset>0</data_offset>
-                <depth>2048</depth>
-                <width>4</width>
-                <num_section>1</num_section>
-                <section_size>8</section_size>
-                <width_per_section>4</width_per_section>
-                <bytes_in_per_section>1</bytes_in_per_section>
-                <working_mode>
-                    <address_step>1</address_step>
-                    <depth>2048</depth>
-                    <mode_type>126</mode_type>
-                    <width>4</width>
-                    <num_byte>1</num_byte>
-                    <ecc>0</ecc>
-                </working_mode>
-            </sub_bid_info>
-        </INST_3>
-        <INST_4>
-            <rid>0X0007</rid>
-            <wid>0X0007</wid>
-            <is_debuggable>n</is_debuggable>
-            <is_initialize>y</is_initialize>
-            <model_type>AL_PHY_BRAM</model_type>
-            <name>u_hdmi_top/debayer_l/linebuffer/gen_ram_inst[1]$u_ram/ramread0_syn_14</name>
-            <width_a>4</width_a>
-            <width_b>4</width_b>
-            <logic_name>u_hdmi_top/debayer_l/linebuffer/gen_ram_inst[1]$u_ram/ramread0_syn_8</logic_name>
-            <logic_width>8</logic_width>
-            <logic_depth>2048</logic_depth>
-            <sub_bid_info>
-                <address_offset>0</address_offset>
-                <data_offset>4</data_offset>
-                <depth>2048</depth>
-                <width>4</width>
-                <num_section>1</num_section>
-                <section_size>8</section_size>
-                <width_per_section>4</width_per_section>
-                <bytes_in_per_section>1</bytes_in_per_section>
-                <working_mode>
-                    <address_step>1</address_step>
-                    <depth>2048</depth>
-                    <mode_type>126</mode_type>
-                    <width>4</width>
-                    <num_byte>1</num_byte>
-                    <ecc>0</ecc>
-                </working_mode>
-            </sub_bid_info>
-        </INST_4>
-        <INST_5>
-            <rid>0X0010</rid>
-            <wid>0X0010</wid>
+            <rid>0X0008</rid>
+            <wid>0X0008</wid>
             <is_debuggable>y</is_debuggable>
             <is_initialize>y</is_initialize>
             <model_type>AL_PHY_BRAM</model_type>
@@ -157,10 +33,10 @@
                     <ecc>0</ecc>
                 </working_mode>
             </sub_bid_info>
-        </INST_5>
-        <INST_6>
-            <rid>0X0011</rid>
-            <wid>0X0011</wid>
+        </INST_1>
+        <INST_2>
+            <rid>0X0009</rid>
+            <wid>0X0009</wid>
             <is_debuggable>y</is_debuggable>
             <is_initialize>y</is_initialize>
             <model_type>AL_PHY_BRAM</model_type>
@@ -188,43 +64,12 @@
                     <ecc>0</ecc>
                 </working_mode>
             </sub_bid_info>
-        </INST_6>
+        </INST_2>
     </AL_PHY_BRAM>
     <AL_PHY_BRAM32K>
         <INST_1>
-            <rid>0X0008</rid>
-            <wid>0X0008</wid>
-            <is_debuggable>n</is_debuggable>
-            <is_initialize>y</is_initialize>
-            <model_type>AL_PHY_BRAM32K</model_type>
-            <name>u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/ram_inst/ramread0_syn_11</name>
-            <width_a>8</width_a>
-            <width_b>8</width_b>
-            <logic_name>u_ddr3_top/u_sdram_fifo_ctrl/rdfifo/ram_inst/ramread0_syn_10</logic_name>
-            <logic_width>8</logic_width>
-            <logic_depth>1024</logic_depth>
-            <sub_bid_info>
-                <address_offset>0</address_offset>
-                <data_offset>0</data_offset>
-                <depth>1024</depth>
-                <width>8</width>
-                <num_section>1</num_section>
-                <section_size>8</section_size>
-                <width_per_section>8</width_per_section>
-                <bytes_in_per_section>1</bytes_in_per_section>
-                <working_mode>
-                    <address_step>1</address_step>
-                    <depth>4096</depth>
-                    <mode_type>129</mode_type>
-                    <width>8</width>
-                    <num_byte>1</num_byte>
-                    <ecc>0</ecc>
-                </working_mode>
-            </sub_bid_info>
-        </INST_1>
-        <INST_2>
-            <rid>0X000C</rid>
-            <wid>0X000C</wid>
+            <rid>0X0004</rid>
+            <wid>0X0004</wid>
             <is_debuggable>n</is_debuggable>
             <is_initialize>y</is_initialize>
             <model_type>AL_PHY_BRAM32K</model_type>
@@ -252,6 +97,6 @@
                     <ecc>0</ecc>
                 </working_mode>
             </sub_bid_info>
-        </INST_2>
+        </INST_1>
     </AL_PHY_BRAM32K>
 </All_Bram_Infos>

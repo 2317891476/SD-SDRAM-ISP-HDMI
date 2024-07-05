@@ -1,4 +1,4 @@
-module isp_demosaic_l
+module isp_debayer_l
 #(
 	parameter BITS = 8,
 	parameter WIDTH = 1280,

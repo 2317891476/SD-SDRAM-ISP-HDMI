@@ -1,25 +1,3 @@
-//****************************************Copyright (c)***********************************//
-//??????????????www.yuanzige.com
-//????????www.openedv.com
-//????????http://openedv.taobao.com
-//????????????????"???????"???????ZYNQ & FPGA & STM32 & LINUX?????
-//??????��?????????
-//Copyright(C) ??????? 2018-2028
-//All rights reserved
-//----------------------------------------------------------------------------------------
-// File name:           hdmi_top
-// Last modified Date:  2020/05/04 9:19:08
-// Last Version:        V1.0
-// Descriptions:        HDMI??????????
-//                      
-//----------------------------------------------------------------------------------------
-// Created by:          ???????
-// Created date:        2019/05/04 9:19:08
-// Version:             V1.0
-// Descriptions:        The original version
-//
-//----------------------------------------------------------------------------------------
-//****************************************************************************************//
 
 module  hdmi_top1(
     input           pixel_clk,
@@ -31,6 +9,7 @@ module  hdmi_top1(
     output [2:0]    tmds_data_p,    // TMDS ???????
     //output [2:0]    tmds_data_n,
    //?????? 
+    input  ISP_mode,
     output          video_vs,       //HDMI?????      
     output  [10:0]  pixel_xpos,     //??????????
     output  [10:0]  pixel_ypos,     //???????????      
@@ -50,11 +29,7 @@ localparam BITS = 16;      // Assuming 8-bit pixel depth
 localparam WIDTH = 1920;  // Image width
 localparam HEIGHT = 1080;  // Image height
 localparam BAYER_PATTERN = 2; // RGGB pattern by default //0:RGGB 1:GRBG 2:GBRG 3:BGGR
-wire out_href,out_vsync,out_de;
-wire [BITS-1:0] out_raw;
 
-wire out_href2,out_vsync2,out_de2;
-wire [BITS-1:0] out_raw2;
 //wire  [11:0]  video_rgb;
 //*****************************************************
 //**                    main code
@@ -103,27 +78,40 @@ video_driver u_video_driver(
     //      .out_vsync(out_vsync),
     //      .rgb565(out_raw)
     // );
+wire [23:0] dpc_in;
+wire [23:0] dpc_out;
+wire [23:0] awb_in;
+wire [23:0] awb_out;
+wire [23:0] debayer_l_in;
+wire [23:0] debayer_m_in;
+wire [23:0] debayer_h_in;
+wire [23:0] debayer_l_out;
+wire [23:0] debayer_m_out;
+wire [23:0] debayer_h_out;
 
-//    isp_dpc  #(.BITS(BITS),
-//             .WIDTH(WIDTH),
-//             .HEIGHT(HEIGHT),
-//             .BAYER (BAYER_PATTERN) )  dpc
-//    (
-//         .pclk(pixel_clk),
-//         .rst_n(sys_rst_n),
+wire [23:0] yuv_in,yuv_out;
+wire [23:0] bayer_rgb888_in,bayer_rgb888_out;
 
-//         .threshold(10'd1000), //????��,??????,???????????
+   isp_dpc  #(.BITS(BITS),
+            .WIDTH(WIDTH),
+            .HEIGHT(HEIGHT),
+            .BAYER (BAYER_PATTERN) )  dpc
+   (
+        .pclk(pixel_clk),
+        .rst_n(sys_rst_n),
 
-//         .in_href(video_hs),
-//         .in_vsync(video_vs),
-//         .in_raw(video_rgb_565),
-//         .in_de(video_de),
+        .threshold(10'd1000), //????��,??????,???????????
 
-//         .out_de(out_de),
-//         .out_href(out_href),
-//         .out_vsync(out_vsync),
-//         .out_raw(out_raw)
-//    );
+        .in_href(video_hs),
+        .in_vsync(video_vs),
+        .in_raw(dpc_in),
+        .in_de(video_de),
+
+        .out_de(out_de),
+        .out_href(out_href),
+        .out_vsync(out_vsync),
+        .out_raw(dpc_out)
+   );
 
 // isp_bnr  #(.BITS(BITS),
 //          .WIDTH(WIDTH),
@@ -146,66 +134,62 @@ video_driver u_video_driver(
 //      .out_raw(out_raw2)
 // );
 
-// bayer_to_rgb888 trans(
-//     .pclk(pixel_clk),
-//     .rst(sys_rst_n),
-//     .bayer_data(data_in),
-//     .pixel_x(pixel_xpos),
-//     .pixel_y(pixel_ypos),
+bayer_to_rgb888 trans(
+    .pclk(pixel_clk),
+    .rst(sys_rst_n),
+    .bayer_data(bayer_rgb888_in),
+    .in_href(video_hs),
+    .in_vsync(video_vs),
 
-//     .rgb888(video_rgb)
-// );
+    .rgb888(bayer_rgb888_out)
+);
 
-// isp_demosaic
+isp_debayer_h#(
+	.WIDTH(WIDTH),
+    .HEIGHT(HEIGHT),
+	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
+)
+debayer_h
+(
+	.pclk(pixel_clk),
+         .rst_n(sys_rst_n),
+         .in_href(video_hs),
+         .in_vsync(video_vs),
+         .in_raw(debayer_h_in[15:8]),
+         .in_de(video_de),
 
-// #(
-// 	.WIDTH(WIDTH),
-//     .HEIGHT(HEIGHT),
-// 	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
-// )
-// debayer_h
-// (
-// 	.pclk(pixel_clk),
-//          .rst_n(sys_rst_n),
-//          .in_href(video_hs),
-//          .in_vsync(video_vs),
-//          .in_raw(video_rgb_565[15:8]),
-//          .in_de(video_de),
+         .out_de(out_de),
+         .out_href(out_href),
+         .out_vsync(out_vsync),
+         .out_r(debayer_h_out[23:16]),
+         .out_g(debayer_h_out[15:8]),
+         .out_b(debayer_h_out[7:0])
+);
 
-//          .out_de(out_de),
-//          .out_href(out_href),
-//          .out_vsync(out_vsync),
-//          .out_r(video_rgb[23:16]),
-//          .out_g(video_rgb[15:8]),
-//          .out_b(video_rgb[7:0])
-// );
+isp_debayer_m#(
+	.WIDTH(WIDTH),
+    .HEIGHT(HEIGHT),
+	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
+)
+debayer_m
+(
+	.pclk(pixel_clk),
+         .rst_n(sys_rst_n),
+         .in_href(video_hs),
+         .in_vsync(video_vs),
+         .in_raw(debayer_m_in[15:8]),
+         .in_de(video_de),
 
-// isp_demosaic_m
+         .out_de(out_de),
+         .out_href(out_href),
+         .out_vsync(out_vsync),
+         .out_r(debayer_m_out[23:16]),
+         .out_g(debayer_m_out[15:8]),
+         .out_b(debayer_m_out[7:0])
+);
 
-// #(
-// 	.WIDTH(WIDTH),
-//     .HEIGHT(HEIGHT),
-// 	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
-// )
-// debayer_m
-// (
-// 	.pclk(pixel_clk),
-//          .rst_n(sys_rst_n),
-//          .in_href(video_hs),
-//          .in_vsync(video_vs),
-//          .in_raw(video_rgb_565[15:8]),
-//          .in_de(video_de),
 
-//          .out_de(out_de),
-//          .out_href(out_href),
-//          .out_vsync(out_vsync),
-//          .out_r(video_rgb[23:16]),
-//          .out_g(video_rgb[15:8]),
-//          .out_b(video_rgb[7:0])
-// );
-wire [7:0] out_r0,out_b0,out_g0;
-
-isp_demosaic_l#(
+isp_debayer_l#(
 	.WIDTH(WIDTH),
     .HEIGHT(HEIGHT),
 	.BAYER (2) //0:RGGB 1:GRBG 2:GBRG 3:BGGR
@@ -216,15 +200,15 @@ debayer_l
          .rst_n(sys_rst_n),
          .in_href(video_hs),
          .in_vsync(video_vs),
-         .in_raw(video_rgb_565[15:8]),
+         .in_raw(debayer_l_in[15:8]),
          .in_de(video_de),
 
          .out_de(out_de),
          .out_href(out_href),
          .out_vsync(out_vsync),
-         .out_r(out_r0),
-         .out_g(out_g0),
-         .out_b(out_b0)
+         .out_r(debayer_l_out[23:16]),
+         .out_g(debayer_l_out[15:8]),
+         .out_b(debayer_l_out[7:0])
 );
 
 ISP_awb_top#(
@@ -236,20 +220,47 @@ awb
 (
 	    .pclk(pixel_clk),
          .rst_n(sys_rst_n),
-         .in_href(out_href),
-         .in_vsync(out_vsync),
-         //.in_raw(video_rgb_565[15:8]),
-         .in_r(out_r0),
-         .in_g(out_g0),
-         .in_b(out_b0),
-         .in_de(out_de),
+         .in_href(video_hs),
+         .in_vsync(video_vs),
+         .in_r(awb_in[23:16]),
+         .in_g(awb_in[15:8]),
+         .in_b(awb_in[7:0]),
+         .in_de(video_de),
 
          .out_de(out_de2),
          .out_href(out_href2),
          .out_vsync(out_vsync2),
-         .out_r(video_rgb[23:16]),
-         .out_g(video_rgb[15:8]),
-         .out_b(video_rgb[7:0])
+         .out_r(awb_out[23:16]),
+         .out_g(awb_out[15:8]),
+         .out_b(awb_out[7:0])
+);
+
+ISP_interconnect isp_interconnect
+(
+    .clk(pixel_clk),
+    .rst_n(sys_rst_n),
+
+    .mode(mode),
+
+    .bayer_data(bayer_data),
+
+    .dpc_out(dpc_out),
+    .awb_out(awb_out),
+    .debayer_l_out(debayer_l_out),
+    .debayer_m_out(debayer_m_out),
+    .debayer_h_out(debayer_h_out),
+    .yuv_out(),
+    .bayer_rgb888_out(bayer_rgb888_out),
+
+    .bayer_rgb888_in(bayer_rgb888_in),
+    .dpc_in(dpc_in),
+    .awb_in(awb_in),
+    .debayer_l_in(debayer_l_in),
+    .debayer_m_in(debayer_m_in),
+    .debayer_h_in(debayer_h_in),
+    .yuv_in(),
+
+    .hdmi_in(video_rgb)
 );
 
 //????HDMI???????
@@ -261,9 +272,9 @@ hdmi_tx #(.FAMILY("EG4"))	//EF2??EF3??EG4??AL3??PH1
     .RST_N        (sys_rst_n),
                 
     .VGA_RGB      (video_rgb),
-    .VGA_HS    (out_href), 
-    .VGA_VS    (out_vsync),
-    .VGA_DE       (out_de),
+    .VGA_HS    (video_hs), 
+    .VGA_VS    (video_vs),
+    .VGA_DE       (video_de),
                 
     .HDMI_CLK_P     (tmds_clk_p),
     //.tmds_clk_n     (tmds_clk_n),

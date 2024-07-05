@@ -11,5 +11,3 @@ set_pin_assignment { sd_cs } { LOCATION = F13; IOSTANDARD = LVCMOS33; }
 set_pin_assignment { sd_mosi  } { LOCATION = F14; IOSTANDARD = LVCMOS33; }
 set_pin_assignment { sd_miso } { LOCATION = D14; IOSTANDARD = LVCMOS33; }
 
-set_pin_assignment	{ switch_video[0]}	{ LOCATION = A10; IOSTANDARD = LVCMOS33; }
-set_pin_assignment	{ switch_video[1]}	{ LOCATION = B10; IOSTANDARD = LVCMOS33; }
